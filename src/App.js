@@ -37,13 +37,16 @@ function Content() {
     height: "24rem",
     borderRadius: "1rem",
     width: "46vw",
-    // backgroundColor: "black",
     transformStyle: "preserve-3d",
     webkitTransform: "perspective(500px) rotateY(12deg) scale(0.5)",
     mozTransform: "perspective(500px) rotateY(12deg) scale(0.5)",
     transform: "perspective(500px) rotateY(12deg) scale(0.5)",
     padding: "4%",
-    background: "rgba(255, 255, 255, 0.05)",
+    // background: "rgba(255, 255, 255, 0.05)",
+    background:
+      // "radial-gradient(172.02% 300.23% at 94.69% 2.56%, rgba(77, 89, 199, 0.3) 0%, rgba(122, 114, 114, 0.05) 6%)",
+      "radial-gradient(100% 204.51% at 100% 0%, rgba(17, 246, 212, 0.145) 0%, rgba(255, 255, 255, 0.005) 50%) ",
+    boxShadow: "inset -2px 0px 2px -2px #11F6D4, inset 2px 4px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 6px 1px rgba(17, 246, 212, 0.5)",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
     color: "white",
@@ -169,7 +172,7 @@ export default function App() {
           <EmeraldBot scale={0.05} position={[2, -2, 4]} />
         </ScrollControls>{' '} */}
 
-          <ScrollControls damping={2} pages={10} style={{width:"110vw"}}>
+          <ScrollControls damping={2} pages={10} style={{ width: "110vw" }}>
             <EmeraldBot scale={0.01} position={[10, 10, 10]} />
             {/* <EmeraldBot  position={[20, 0, 4]} /> */}
             {/* <Scroll  > */}
