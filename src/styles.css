@@ -1,4 +1,5 @@
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,900;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -16,7 +17,7 @@ body,
 body {
   overscroll-behavior: none;
   background: #1D2741;
-  font-family: 'Inter var', sans-serif;
+  font-family: 'Poppins', sans-serif;
   cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4='),
     auto;
   background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
@@ -49,7 +50,7 @@ h1 {
 
 h2 {
   font-size: 5em;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.05em;
   line-height:4.2rem;
   margin-left: 2rem;
