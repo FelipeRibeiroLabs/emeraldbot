@@ -14,7 +14,7 @@ root.render(
     <>
     {/* <Home /> */}
     <App />
-    <Overlay />
+    {/* <Overlay /> */}
     </>
   </React.StrictMode>
 );
