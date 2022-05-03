@@ -6,10 +6,14 @@ import {
   Scroll,
   useScroll,
   Html,
+  Loader,
+  Image,
+  useAspect
 } from "@react-three/drei";
 import EmeraldBot from "./EmeraldBot";
 import state from "./infos";
 import { Block } from "./Block";
+import Navbar from "./components/Navbar";
 
 function Content() {
   const { width, height } = useThree((state) => state.viewport);
@@ -42,11 +46,10 @@ function Content() {
     mozTransform: "perspective(500px) rotateY(12deg) scale(0.5)",
     transform: "perspective(500px) rotateY(12deg) scale(0.5)",
     padding: "4%",
-    // background: "rgba(255, 255, 255, 0.05)",
     background:
-      // "radial-gradient(172.02% 300.23% at 94.69% 2.56%, rgba(77, 89, 199, 0.3) 0%, rgba(122, 114, 114, 0.05) 6%)",
       "radial-gradient(100% 204.51% at 100% 0%, rgba(17, 246, 212, 0.145) 0%, rgba(255, 255, 255, 0.005) 50%) ",
-    boxShadow: "inset -2px 0px 2px -2px #11F6D4, inset 2px 4px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 6px 1px rgba(17, 246, 212, 0.5)",
+    boxShadow:
+      "inset -2px 0px 2px -2px #11F6D4, inset 2px 4px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 6px 1px rgba(17, 246, 212, 0.5)",
     backdropFilter: "blur(5px)",
     WebkitBackdropFilter: "blur(5px)",
     color: "white",
@@ -171,7 +174,7 @@ export default function App() {
           {/* <ScrollControls pages={6}>
           <EmeraldBot scale={0.05} position={[2, -2, 4]} />
         </ScrollControls>{' '} */}
-
+        
           <ScrollControls damping={2} pages={10} style={{ width: "110vw" }}>
             <EmeraldBot scale={0.01} position={[10, 10, 10]} />
             {/* <EmeraldBot  position={[20, 0, 4]} /> */}
@@ -180,6 +183,7 @@ export default function App() {
             <Content />
             {/* </Scroll> */}
             <Scroll html>
+              <Navbar />
               <h1 style={{ position: "absolute", top: "60vh", left: "0.5em" }}>
                 EMERALD <br /> BOT
               </h1>
@@ -188,6 +192,8 @@ export default function App() {
           <Preload />
         </Suspense>
       </Canvas>
+      <Loader />
+
       <div ref={scrollArea} onScroll={onScroll}>
         <div style={{ height: `${state.pages * 100}vh` }} />
       </div>

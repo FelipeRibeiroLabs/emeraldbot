@@ -1,8 +1,126 @@
-@import url('https://rsms.me/inter/inter.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,900;1,900&display=swap');
+@import '@picocss/pico';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
+}
+
+/* Green Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+  --primary: hsla(var(--palette-green-40), 100%);
+  --primary-hover: hsla(var(--palette-green-50), 100%);
+  --primary-focus: transparent;
+  --primary-inverse: hsla(var(--palette-green-50), 100%);
+  --primary-bg: hsl(0, 0%, 100%);
+  --secondary-bg: hsl(0, 0%, 95%);
+  --gradient-primary: hsla(var(--palette-green-70), 35%);
+  --gradient-secondary: hsla(var(--palette-blue-70), 35%);
+  --text: hsl(0, 0%, 10%);
+  --disabled: hsl(0, 0%, 40%);
+  --shadow: hsla(0, 0%, 0%, 0.05) 0px 1px 0px, hsla(0, 0%, 0%, 0.1) 0px 0px 8px;
+}
+
+/* Green Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --primary: hsla(var(--palette-green-50), 100%);
+    --primary-hover: hsla(var(--palette-green-60), 100%);
+    --primary-focus: transparent;
+    --primary-inverse: hsla(var(--palette-green-60), 100%);
+    --primary-bg: hsl(0, 0%, 0%);
+    --secondary-bg: hsl(0, 0%, 5%);
+    --gradient-primary: hsla(var(--palette-green-70), 35%);
+    --gradient-secondary: hsla(var(--palette-blue-70), 35%);
+    --text: hsl(0, 0%, 100%);
+    --disabled: hsl(0, 0%, 60%);
+    --shadow: hsla(0, 0%, 100%, 0.05) 0px 1px 0px, hsla(0, 0%, 100%, 0.1) 0px 0px 8px;
+  }
+}
+
+/* Green Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+  --primary: hsla(var(--palette-green-50), 100%);
+  --primary-hover: hsla(var(--palette-green-60), 100%);
+  --primary-focus: transparent;
+  --primary-inverse: hsla(var(--palette-green-60), 100%);
+  --primary-bg: hsl(0, 0%, 0%);
+  --secondary-bg: hsl(0, 0%, 5%);
+  --gradient-primary: hsla(var(--palette-green-70), 35%);
+  --gradient-secondary: hsla(var(--palette-blue-70), 35%);
+  --text: hsl(0, 0%, 100%);
+  --disabled: hsl(0, 0%, 60%);
+  --shadow: hsla(0, 0%, 100%, 0.05) 0px 1px 0px, hsla(0, 0%, 100%, 0.1) 0px 0px 8px;
+}
+
+:root {
+  /* Base colors */
+  --base-green: 169, 81%;
+  --base-blue: 234, 67%;
+
+  --palette-green-10: var(--base-green), 10%;
+  --palette-green-20: var(--base-green), 20%;
+  --palette-green-30: var(--base-green), 30%;
+  --palette-green-40: var(--base-green), 40%;
+  --palette-green-50: var(--base-green), 50%;
+  --palette-green-60: var(--base-green), 60%;
+  --palette-green-70: var(--base-green), 70%;
+  --palette-green-80: var(--base-green), 80%;
+  --palette-green-90: var(--base-green), 90%;
+  --palette-green-100: var(--base-green), 100%;
+
+  --palette-blue-10: var(--base-blue), 10%;
+  --palette-blue-20: var(--base-blue), 20%;
+  --palette-blue-30: var(--base-blue), 30%;
+  --palette-blue-40: var(--base-blue), 40%;
+  --palette-blue-50: var(--base-blue), 50%;
+  --palette-blue-60: var(--base-blue), 60%;
+  --palette-blue-70: var(--base-blue), 70%;
+  --palette-blue-80: var(--base-blue), 80%;
+  --palette-blue-90: var(--base-blue), 90%;
+  --palette-blue-100: var(--base-blue), 100%;
+
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+
+  /* Fonts Families*/
+  --font-primary: 'Poppins', sans-serif;
+  --font-accent: 'JetBrains Mono', monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.7rem;
+  --font-size-s: 0.8rem;
+  --font-size-m: 0.9rem;
+  --font-size-l: 1rem;
+
+  /* Container widths */
+  --container-width-full: 100%;
+  --container-width-large: 80em;
+  --container-width-medium: 60em;
+  --container-width-small: 40em;
+
+  /* Gutters */
+  --gutter-x: 2rem;
+  --gutter-y: 1.6rem;
+
+  font-family: var(--font-primary);
+  box-sizing: border-box;
+}
+
+/* Responsive Font Size */
+@media (min-width: 30em) {
+  :root {
+    --font-size-xs: 0.8rem;
+    --font-size-s: 0.9rem;
+    --font-size-m: 1rem;
+    --font-size-l: 1.1rem;
+  }
 }
 
 html,
@@ -20,10 +138,10 @@ body {
   font-family: 'Poppins', sans-serif;
   cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4='),
     auto;
-  background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
+  /* background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
   background-size: fill;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: top; */
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
@@ -39,13 +157,14 @@ body::-webkit-scrollbar {
 }
 
 h1 {
-  font-size: 6em;
+  font-size: 8em;
   font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 5rem;
+  letter-spacing: -0.3rem;
+  line-height: 6rem;
   margin: 0;
   padding: 0;
-  color: rgba(240, 248, 255, 0.798);
+  color: rgba(240, 248, 255, 0.8);
+  
 }
 
 h2 {
@@ -71,4 +190,26 @@ a {
 .card-left {
   width: 24vw;
   background-color: black;
+}
+
+/* NAV */
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--primary);
+  margin-left: 1.6rem;
+}
+
+nav {
+  display: flex;
+  width: 100vw;
+  flex-direction: inherit;
+  justify-content: space-between;
+  padding-left: 4.2rem;
+  padding-top: 1.4rem;
+  padding-right: 4.2rem;
+  list-style-type: none;
+  gap: 10px;
+  background: transparent;
 }
