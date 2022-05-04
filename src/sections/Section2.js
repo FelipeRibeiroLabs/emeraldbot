@@ -1,11 +1,10 @@
 import styled from "styled-components"
+import { TextAnimation } from "../components/TextAnimation"
 
 export function Section2(){
     return (
         <SectionWrapper>
-              <h2>
-                Short Description of our beloved <br /> bot
-              </h2>
+            <TextAnimation text="A Discord bot that allows you to distribute roles and gate access to channels based on token/NFT holdings. " />
         </SectionWrapper>
     )
 }
@@ -17,4 +16,6 @@ const SectionWrapper = styled.div`
     justify-content: center;
     gap: 20px;
     padding: 40px;
+    overflow: hidden;
+
 `
