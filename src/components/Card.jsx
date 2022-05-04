@@ -15,16 +15,16 @@ const CardWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: 0.6rem;
     height: 350px;
     width: 380px;
     padding: 4%;
     margin: 20px;
     color: white;
-    background: radial-gradient(100% 204.51% at 100% 0%, rgba(17, 246, 212, 0.145) 0%, rgba(255, 255, 255, 0.005) 50%);
-    box-shadow: inset -2px 0px 2px -2px #11F6D4, inset 2px 4px 4px rgba(0, 0, 0, 0.3), inset 0px 0px 6px 1px rgba(17, 246, 212, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background:  rgba(255, 255, 255, 0.01) ;
+    box-shadow: inset 0px 39px 56px -36px rgba(255, 255, 255, 0.25), inset 0px 7px 11px -4px rgba(255, 250, 250, 0.5), inset 0px -82px 68px -64px rgba(0, 255, 217, 0.3), inset 0px 0px 100px -48px rgba(0, 255, 217, 0.3), inset 0px 98px 100px -48px rgba(0, 255, 217, 0.3), inset 0px 4px 18px rgba(0, 255, 217, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
     p{
         text-align: center;
