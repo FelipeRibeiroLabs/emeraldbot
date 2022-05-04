@@ -1,18 +1,13 @@
-import { Suspense, useEffect, useRef } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
 import {
   Preload,
   ScrollControls,
   Scroll,
-  useScroll,
-  Html,
-  Loader,
-  Image,
-  useAspect
+  Loader
 } from "@react-three/drei";
 import EmeraldBot from "./components/EmeraldBot.jsx";
 import Navbar from "./components/Navbar";
-import styled from "styled-components"
 import {Section2} from "./sections/Section2"
 import { Section1 } from "./sections/Section1.js";
 import { Section3 } from "./sections/Section3.js";
