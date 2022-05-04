@@ -11,14 +11,12 @@ export function Section3(){
   const scroll = useScroll()
   
   useFrame((state, delta) => {
-    const offset = 1 - scroll.offset
-
-
+    // const offset = 1 - scroll.offset
   })
 
     return (
         <SectionWrapper>
-            <h3>Emerald Bot Comands</h3>
+            <h3>Emerald Bot Commands</h3>
             <CardsWrapper ref={group}>
               <Card text="Here we will have the content of the card" />
               <Card text="Here we will have the content of the card" />
@@ -41,6 +39,7 @@ const SectionWrapper = styled.div`
     align-items: center;
     gap: 20px;
     padding: 40px;
+    
 
     h1{
       font-size: 4rem;
@@ -50,8 +49,10 @@ const SectionWrapper = styled.div`
 const CardsWrapper = styled.div`
     display: flex;
     justify-content: center;
-    position: relative;
+    position: sticky;
     left: 20px;
+    z-index: 99;
+
 
     div:nth-child(1){
       transform-style: preserve-3d;

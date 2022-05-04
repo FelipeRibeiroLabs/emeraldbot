@@ -3,8 +3,7 @@ import styled from "styled-components"
 export function Section1(){
     return (
         <SectionWrapper>
-            <h1 style={{webKitTextStroke:"5px black",
-  webKitTextFillColor:"transparent",}}>
+            <h1 >
                 EMERALD <br /> BOT
             </h1>
             <p>

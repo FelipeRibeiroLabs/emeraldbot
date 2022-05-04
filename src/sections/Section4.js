@@ -18,7 +18,7 @@ export function Section4(){
 
     return (
         <SectionWrapper>
-            <h3>Float Comands</h3>
+            <h3>Float Commands</h3>
             <CardsWrapper ref={group}>
               <Card text="Here we will have the content of the card" />
               <Card text="Here we will have the content of the card" />
