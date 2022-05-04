@@ -18,7 +18,7 @@ export function Section5(){
 
     return (
         <SectionWrapper>
-            <h1>Gated Access</h1>
+            <h3>Gated Access</h3>
             <CardsWrapper ref={group}>
               <Card text="Here we will have the content of the card" />
               <Card text="Here we will have the content of the card" />

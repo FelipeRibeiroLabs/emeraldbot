@@ -18,7 +18,7 @@ export function Section3(){
 
     return (
         <SectionWrapper>
-            <h1>Emerald Bot Comands</h1>
+            <h3>Emerald Bot Comands</h3>
             <CardsWrapper ref={group}>
               <Card text="Here we will have the content of the card" />
               <Card text="Here we will have the content of the card" />

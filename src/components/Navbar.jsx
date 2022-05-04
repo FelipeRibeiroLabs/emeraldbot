@@ -23,6 +23,5 @@ export default function Navbar() {
   {/* <li>
     <a class="nav-link" href="https://discord.com/invite/emeraldcity" target="_blank">Emerald City</a>
   </li> */}
-  {/* <slot/> */}
 </nav>  )
 }

@@ -27,7 +27,7 @@
 /* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --primary: hsla(var(--palette-green-50), 100%);
+    --primary: hsla(var(--palette-green-40), 100%);
     --primary-hover: hsla(var(--palette-green-60), 100%);
     --primary-focus: transparent;
     --primary-inverse: hsla(var(--palette-green-60), 100%);
@@ -164,12 +164,23 @@ h1 {
   margin: 0;
   padding: 0;
   color: rgba(240, 248, 255, 0.8);
-  
+  -webkit-text-stroke:1.4px white;
+  -webkit-text-fill-color:transparent;
 }
 
 h2 {
   font-size: 5em;
   font-weight: 300;
+  letter-spacing: -0.05em;
+  line-height:4.2rem;
+  margin-left: 2rem;
+  padding: 0;
+  color: rgba(240, 248, 255, 0.798);
+}
+
+h3 {
+  font-size: 4em;
+  font-weight: 600;
   letter-spacing: -0.05em;
   line-height:4.2rem;
   margin-left: 2rem;
@@ -197,7 +208,7 @@ a {
 .nav-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 18px;
-  color: var(--primary);
+  color: #11F6D4;
   margin-left: 1.6rem;
 }
 
@@ -207,7 +218,7 @@ nav {
   flex-direction: inherit;
   justify-content: space-between;
   padding-left: 4.2rem;
-  padding-top: 1.4rem;
+  padding-top: 0.8rem;
   padding-right: 4.2rem;
   list-style-type: none;
   gap: 10px;

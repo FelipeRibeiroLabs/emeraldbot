@@ -34,13 +34,13 @@ export default function Model(props) {
         // position={[0,0,-3]}
         scale={size}
           transparent
-          opacity={0.5} 
+          opacity={0.3} 
         />
          <group ref={group} position={[2, -4, -8]} rotation={[0, 2, 0]} scale={8}>
-          <mesh castShadow receiveShadow geometry={nodes.emeraldbot_1.geometry} material={materials['flowbot:phong1']} />
+          <mesh castShadow receiveShadow geometry={nodes.emeraldbot_1.geometry}  material-color={"#00FFD9"} />
           <mesh castShadow receiveShadow geometry={nodes.emeraldbot_2.geometry} material={materials['flowbot:phong2']} />
           <mesh castShadow receiveShadow geometry={nodes.emeraldbot_3.geometry} material={materials['flowbot:phong3']} />
-          <mesh castShadow receiveShadow geometry={nodes.emeraldbot_4.geometry} material={materials['flowbot:typeBlinn1']} />
+          <mesh castShadow receiveShadow geometry={nodes.emeraldbot_4.geometry} material-color={"#2FD1B9"} />
         </group>
         </>
        
