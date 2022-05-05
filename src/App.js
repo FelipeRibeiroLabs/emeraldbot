@@ -33,16 +33,16 @@ const Effects = forwardRef((props, ref) => {
 
 
 export default function App() {
+
   return (
     <>
       <Canvas id="canvas" gl={{ antialias: false }} dpr={[1, 2]}>
         
         <Suspense fallback={null}>
         
-          <ScrollControls damping={2} pages={10} style={{ width: "110vw" }}>
+          <ScrollControls damping={2} pages={6} style={{ width: "110vw" }}>
             
             <EmeraldBot scale={0.01} position={[10, 10, 10]} />
-            
 
             <Scroll html>
               <Navbar />

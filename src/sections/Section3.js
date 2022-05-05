@@ -1,38 +1,71 @@
-import { useRef } from 'react'
 import { Card } from "../components/Card";
-import { useScroll } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
 
 import styled from "styled-components"
 
 export function Section3(){
 
-  const group = useRef()
-  const scroll = useScroll()
-  
-  useFrame((state, delta) => {
-    // const offset = 1 - scroll.offset
-  })
-
     return (
         <SectionWrapper>
             <h3>Emerald Bot Commands</h3>
-            <CardsWrapper ref={group}>
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
+            <CardsWrapper>
+              <Card 
+              command="/identity" 
+              commandDescription="Allows you to get on-chain information about a Discord user (their address, .find, .fn, and EmeraldID status)." 
+              param1="1- A Discord User" 
+              param2="" 
+              param3="" 
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/resolve" 
+              commandDescription="Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all the roles they have in your Discord." 
+              param1="1- A Blocto wallet address, a .find name, or a .fn name." 
+              param2="" 
+              param3="" 
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/momentsinset" 
+              commandDescription="Allows you to view the moments an NBATopShot user has inside a certain set." 
+              param1="1- A Dapper wallet address (ex. 0x84efe65bd9993ff8)" 
+              param2="2- The set name (ex. Cool Cats)" 
+              param3="" 
+              imgLinkUsage="" 
+              imgLinkResult=""/>
             </CardsWrapper>
-            <CardsWrapper ref={group}>
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
+            <CardsWrapper>
+              <Card 
+              command="/togglerole" 
+              commandDescription="Allows a user to give or remove a specific role from themselve" 
+              param1="1- A role for the user to toggle on themselves" 
+              param2="2- A description of what this is for" 
+              param3="3- OPTIONAL: URL to an image (ex. https://i.imgur.com/27H7J1a.png)" 
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/god" 
+              commandDescription="Try it out. It’s pretty self explanatory." 
+              param1="" 
+              param2="" 
+              param3="" 
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/userswithrole" 
+              commandDescription="Return a CSV file containing the users and their corresponding wallet address for people who have a specific role. You can download the file by clicking the downward facing arrow in the bottom right." 
+              param1="1- The role to look for" 
+              param2="" 
+              param3="" 
+              note="NOTE: The bot will only be able to provide wallet addresses for people who have an EmeraldID. Otherwise, it will produce “N/A”"
+              imgLinkUsage="" 
+              imgLinkResult=""/>
             </CardsWrapper>
         </SectionWrapper>
     )
 }
 
 const SectionWrapper = styled.div`
-    height: 100vh;
+    height: 120vh;
     display: flex;
     justify-content: center;
     flex-direction: column;

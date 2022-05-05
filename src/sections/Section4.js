@@ -20,9 +20,32 @@ export function Section4(){
         <SectionWrapper>
             <h3>Float Commands</h3>
             <CardsWrapper ref={group}>
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
-              <Card text="Here we will have the content of the card" />
+            <Card 
+              command="/float" 
+              commandDescription="Allows a user to nicely display their FLOAT in Discord." 
+              param1="1- The account the FLOAT is currently held by (can be an address, .find, or .fn name)" 
+              param2="The floatId" 
+              note="NOTE: You can copy and paste the command directly from the website as well, as shown in the below screenshot. This was taken from this FLOAT: https://floats.city/jacob.find/float/185454592"
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/floatverifier" 
+              commandDescription="Setup a button users can click to get a certain role in Discord if they have a specific FLOAT." 
+              param1="1- The EventId the FLOAT is from" 
+              param2="2- The role to give" 
+              //TODO -> ADD A IMG HERE -> https://emeralddao.notion.site/FLOAT-Commands-8517b547c87e43a6a5fd4fdc93edbb9f
+              note="NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing. The EventId is found on the Event’s page. As shown in the below screenshot, this one’s EventId is 185454262"
+              imgLinkUsage="" 
+              imgLinkResult=""/>
+              <Card 
+              command="/groupverifier" 
+              commandDescription="Setup a button users can click to get a certain role in Discord if they have any FLOAT from a specific FLOAT Group." 
+              param1="1- The creator of the FLOAT Group (can be an address, .find, or .fn name)" 
+              param2="2- The name of the Group" 
+              param3="3- The role to give" 
+              note="NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing."
+              imgLinkUsage="" 
+              imgLinkResult=""/>
             </CardsWrapper>
         </SectionWrapper>
     )
