@@ -1,77 +1,70 @@
 import { Card } from "../components/Card";
 
 import styled from "styled-components"
+import infos from "../data/CommandsInfos.json"
+
 
 export function Section3(){
-
+  const emeraldBotCommands = infos[0].emeraldBotCommands
+  const emeraldBotCommands2 = infos[1].emeraldBotCommands2
+  
     return (
         <SectionWrapper>
             <h3>Emerald Bot Commands</h3>
             <CardsWrapper>
-              <Card 
-              command="/identity" 
-              commandDescription="Allows you to get on-chain information about a Discord user (their address, .find, .fn, and EmeraldID status)." 
-              param1="1- A Discord User" 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/resolve" 
-              commandDescription="Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all the roles they have in your Discord." 
-              param1="1- A Blocto wallet address, a .find name, or a .fn name." 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/momentsinset" 
-              commandDescription="Allows you to view the moments an NBATopShot user has inside a certain set." 
-              param1="1- A Dapper wallet address (ex. 0x84efe65bd9993ff8)" 
-              param2="2- The set name (ex. Cool Cats)" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
+              { emeraldBotCommands.map(
+                (
+                  {command, commandDescription, param1, param2, param3, param4, imgLinkUsage, imgLinkResult, note}
+                  ) => {
+                return (
+                  <Card 
+                  command={command}
+                  commandDescription={commandDescription}
+                  param1={param1}
+                  param2={param2} 
+                  param3={param3} 
+                  param4={param4} 
+                  note={note}
+                  imgLinkUsage={imgLinkUsage} 
+                  imgLinkResult={imgLinkResult}
+                  />
+                )
+              })}
             </CardsWrapper>
+
             <CardsWrapper>
-              <Card 
-              command="/togglerole" 
-              commandDescription="Allows a user to give or remove a specific role from themselve" 
-              param1="1- A role for the user to toggle on themselves" 
-              param2="2- A description of what this is for" 
-              param3="3- OPTIONAL: URL to an image (ex. https://i.imgur.com/27H7J1a.png)" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/god" 
-              commandDescription="Try it out. It’s pretty self explanatory." 
-              param1="" 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/userswithrole" 
-              commandDescription="Return a CSV file containing the users and their corresponding wallet address for people who have a specific role. You can download the file by clicking the downward facing arrow in the bottom right." 
-              param1="1- The role to look for" 
-              param2="" 
-              param3="" 
-              note="NOTE: The bot will only be able to provide wallet addresses for people who have an EmeraldID. Otherwise, it will produce “N/A”"
-              imgLinkUsage="" 
-              imgLinkResult=""/>
+              { emeraldBotCommands2.map(
+                (
+                  {command, commandDescription, param1, param2, param3, param4, imgLinkUsage, imgLinkResult, note}
+                  ) => {
+                return (
+                  <Card 
+                  command={command}
+                  commandDescription={commandDescription}
+                  param1={param1}
+                  param2={param2} 
+                  param3={param3} 
+                  param4={param4} 
+                  note={note}
+                  imgLinkUsage={imgLinkUsage} 
+                  imgLinkResult={imgLinkResult}
+                  />
+                )
+              })}
             </CardsWrapper>
         </SectionWrapper>
     )
 }
 
-const SectionWrapper = styled.div`
-    height: 120vh;
+const SectionWrapper = styled.div`    
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 40px;
+    margin: 150px 0;
     
 
     h1{
@@ -80,8 +73,10 @@ const SectionWrapper = styled.div`
 `
 
 const CardsWrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     position: sticky;
     left: 20px;
     z-index: 99;
@@ -93,7 +88,7 @@ const CardsWrapper = styled.div`
     }
 
     div:nth-child(1):hover{
-      -webkit-transform: scale(1.2);
+      -webkit-transform: scale(1.3);
       transition: .5s;
       transition-timing-function: ease-in-out;
     }
@@ -103,7 +98,7 @@ const CardsWrapper = styled.div`
     }
 
     div:nth-child(2):hover{
-      -webkit-transform: scale(1.2);
+      -webkit-transform: scale(1.3);
       transition: .5s;
       transition-timing-function: ease-in-out;
     }
@@ -114,7 +109,7 @@ const CardsWrapper = styled.div`
     }
 
     div:nth-child(3):hover{
-      -webkit-transform: scale(1.2);
+      -webkit-transform: scale(1.3);
       transition: .5s;
       transition-timing-function: ease-in-out;
     }

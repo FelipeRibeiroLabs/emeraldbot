@@ -1,0 +1,133 @@
+[   
+    {
+        "emeraldBotCommands": 
+        [
+            {
+                "command": "/identity",
+                "commandDescription": "Allows you to get on-chain information about a Discord user (their address, .find, .fn, and EmeraldID status).",
+                "param1": "1- A Discord User",
+                "param2": "",
+                "param3": "",
+                "note": "",
+                "imgLinkUsage": "/cardCommands/cardCommandIdentity.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/resolve",
+                "commandDescription": "Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all the roles they have in your Discord.",
+                "param1": "1- A Blocto wallet address, a .find name, or a .fn name.",
+                "param2": "",
+                "param3": "",
+                "note": "",
+                "imgLinkUsage": "/cardCommands/cardCommandResolve.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/momentsinset",
+                "commandDescription": "Allows you to view the moments an NBATopShot user has inside a certain set.",
+                "param1": "1- A Dapper wallet address (ex. 0x84efe65bd9993ff8)",
+                "param2": "2- The set name (ex. Cool Cats)",
+                "param3": "",
+                "note": "",
+                "imgLinkUsage": "/cardCommands/cardCommandMomentsInSet.png",
+                "imgLinkResult": ""
+            }
+        ]
+    },
+    {
+        "emeraldBotCommands2":
+        [ 
+            {
+                "command": "/togglerole",
+                "commandDescription": "Allows a user to give or remove a specific role from themselve",
+                "param1": "1- A role for the user to toggle on themselves",
+                "param2": "2- A description of what this is for",
+                "param3": "3- OPTIONAL: URL to an image (ex. https://i.imgur.com/27H7J1a.png)",
+                "note": "",
+                "imgLinkUsage": "/cardCommands/cardCommandToggleRole.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/god",
+                "commandDescription": "Try it out. It’s pretty self explanatory.",
+                "param1": "",
+                "param2": "",
+                "param3": "",
+                "note": "",
+                "imgLinkUsage": "/cardCommands/cardCommandGod.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/userswithrole",
+                "commandDescription": "Return a CSV file containing the users and their corresponding wallet address for people who have a specific role.",
+                "param1": "1- The role to look for",
+                "param2": "",
+                "param3": "",
+                "note": "NOTE: The bot will only be able to provide wallet addresses for people who have an EmeraldID. Otherwise, it will produce “N/A”",
+                "imgLinkUsage": "/cardCommands/cardCommandsUsersWithRole.png",
+                "imgLinkResult": ""
+            }
+        ]
+    },
+    {
+        "floatCommands": 
+        [
+            {
+                "command": "/float",
+                "commandDescription": "Allows a user to nicely display their FLOAT in Discord.",
+                "param1": "1- The account the FLOAT is currently held by (can be an address, .find, or .fn name)",
+                "param2": "The floatId",
+                "param3": "",
+                "note": "NOTE: You can copy and paste the command directly from the website as well, as shown in the below screenshot. This was taken from this FLOAT: https://floats.city/jacob.find/float/185454592",
+                "imgLinkUsage": "/cardCommands/cardCommandFloat.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/floatverifier",
+                "commandDescription": "Setup a button users can click to get a certain role in Discord if they have a specific FLOAT.",
+                "param1": "1- The EventId the FLOAT is from",
+                "param2": "2- The role to give",
+                "param3": "",
+                "note": "NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing. The EventId is found on the Event’s page. As shown in the below screenshot, this one’s EventId is 185454262",
+                "imgLinkUsage": "/cardCommands/cardCommandFloatVerifier.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/groupverifier",
+                "commandDescription": "Setup a button users can click to get a certain role in Discord if they have any FLOAT from a specific FLOAT Group.",
+                "param1": "1- The creator of the FLOAT Group (can be an address, .find, or .fn name)",
+                "param2": "2- The name of the Group",
+                "param3": "3- The role to give",
+                "note": "NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing.",
+                "imgLinkUsage": "/cardCommands/cardCommandGroupVerifier.png",
+                "imgLinkResult": ""
+            }
+        ]
+    },
+    {
+        "gatedAccess": 
+        [
+            {
+                "command": "/nftverifier",
+                "commandDescription": "If you are someone who wants to simply check if a user owns at least 1 of your NFTs, and your NFT isn’t discovered by complex metadata, this is for you.",
+                "param1": "1- The contract’s name",
+                "param2": "2- The contract’s address",
+                "param3": "3- The public path to the NFT Collection in the user’s account (ex. if the public path is /public/exampleNFT, you would type in exampleNFT)",
+                "param4": "4- The Discord role",
+                "note": "NOTE: You can copy and paste the command directly from the website as well, as shown in the below screenshot. This was taken from this FLOAT: https://floats.city/jacob.find/float/185454592",
+                "imgLinkUsage": "/cardCommands/cardCommandFloat.png",
+                "imgLinkResult": ""
+            },
+            {
+                "command": "/tokenverifier",
+                "commandDescription": "Setup a button users can click to get a certain role in Discord if they have a specific FLOAT.",
+                "param1": "1- The EventId the FLOAT is from",
+                "param2": "2- The role to give",
+                "param3": "",
+                "note": "NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing. The EventId is found on the Event’s page. As shown in the below screenshot, this one’s EventId is 185454262",
+                "imgLinkUsage": "/cardCommands/cardCommandFloatVerifier.png",
+                "imgLinkResult": ""
+            }
+        ]
+    }     
+]

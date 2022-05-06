@@ -40,7 +40,7 @@ export default function App() {
         
         <Suspense fallback={null}>
         
-          <ScrollControls damping={2} pages={6} style={{ width: "110vw" }}>
+          <ScrollControls damping={2} pages={6} style={{ width: "100vw" }}>
             
             <EmeraldBot scale={0.01} position={[10, 10, 10]} />
 
