@@ -28,15 +28,9 @@ const CardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
-    justify-content: center;
-    border-radius: 0.6rem;
-    height: 350px;
-=======
     justify-content: flex-start;
     border-radius: 0.6rem;
     height: 450px;
->>>>>>> be3969604a0715b7e7f654e642fe5c426e38233b
     width: 380px;
     padding: 3%;
     margin: 20px;
@@ -45,8 +39,6 @@ const CardWrapper = styled.div`
     box-shadow: inset 0px 39px 56px -36px rgba(255, 255, 255, 0.25), inset 0px 7px 11px -4px rgba(255, 250, 250, 0.5), inset 0px -82px 68px -64px rgba(0, 255, 217, 0.3), inset 0px 0px 100px -48px rgba(0, 255, 217, 0.3), inset 0px 98px 100px -48px rgba(0, 255, 217, 0.3), inset 0px 4px 18px rgba(0, 255, 217, 0.3);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-<<<<<<< HEAD
-=======
 
     h2{
       font-size: 25px;
@@ -71,7 +63,6 @@ const CardWrapper = styled.div`
       padding: 0;
 
     }
->>>>>>> be3969604a0715b7e7f654e642fe5c426e38233b
 
     p{
         font-size: 12px;

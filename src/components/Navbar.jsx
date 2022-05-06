@@ -8,15 +8,12 @@ export default function Navbar() {
     </li>
     <main style={{display:"flex"}}>
          <li>
-        <a class="nav-link">
-            Link
-        </a>
+         <a class="nav-link" href="https://discord.com/invite/emeraldcity" target="_blank">Docs</a>
       </li>
-      <li>
-        <a class="nav-link">
-            Link 2
-        </a>
+         <li>
+         <a class="nav-link" href="https://discord.com/invite/emeraldcity" target="_blank">Emerald City</a>
       </li>
+      
     </main>
      
    

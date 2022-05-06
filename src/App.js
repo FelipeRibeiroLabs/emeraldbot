@@ -20,10 +20,9 @@ import { Section1 } from "./sections/Section1.js";
 import { Section3 } from "./sections/Section3.js";
 import { Section4 } from "./sections/Section4.js";
 import { Section5 } from "./sections/Section5.js";
+import Footer from "./components/Footer.jsx";
 
 const Effects = forwardRef((props, ref) => {
- 
- 
   return (
     <EffectComposer>
     <DepthOfField focusDistance={0.06} focalLength={0.2} bokehScale={2} height={480} />
@@ -51,6 +50,7 @@ export default function App() {
               <Section3 />
               <Section4 />
               <Section5 />
+              <Footer />
             </Scroll>
             <Effects />
 
