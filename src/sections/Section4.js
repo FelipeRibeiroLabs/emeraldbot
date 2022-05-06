@@ -17,6 +17,7 @@ export function Section4(){
                   ) => {
                 return (
                   <Card 
+                  key={command}
                   command={command}
                   commandDescription={commandDescription}
                   param1={param1}
@@ -59,30 +60,12 @@ const CardsWrapper = styled.div`
       -webkit-transform: perspective(500px) rotateY(12deg) scale(0.9);
     }
 
-    div:nth-child(1):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
-    }
-
     div:nth-child(2n){
       -webkit-transform: scale(0.9);
-    }
-
-    div:nth-child(2n):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
     }
 
     div:nth-child(3n){
       transform-style: preserve-3d;
       -webkit-transform: perspective(500px) rotateY(-12deg) scale(0.9);
-    }
-
-    div:nth-child(3):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
     }
 `

@@ -109,12 +109,12 @@
         [
             {
                 "command": "/nftverifier",
-                "commandDescription": "If you are someone who wants to simply check if a user owns at least 1 of your NFTs, and your NFT isn’t discovered by complex metadata, this is for you.",
+                "commandDescription": "Check if a user owns at least 1 of your NFTs.",
                 "param1": "1- The contract’s name",
                 "param2": "2- The contract’s address",
                 "param3": "3- The public path to the NFT Collection in the user’s account (ex. if the public path is /public/exampleNFT, you would type in exampleNFT)",
                 "param4": "4- The Discord role",
-                "note": "NOTE: You can copy and paste the command directly from the website as well, as shown in the below screenshot. This was taken from this FLOAT: https://floats.city/jacob.find/float/185454592",
+                "note": "NOTE: You can copy and paste the command directly from the website as well.",
                 "imgLinkUsage": "/cardCommands/cardCommandFloat.png",
                 "imgLinkResult": ""
             },
@@ -124,7 +124,7 @@
                 "param1": "1- The EventId the FLOAT is from",
                 "param2": "2- The role to give",
                 "param3": "",
-                "note": "NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. So you don’t have to worry about anything. ;) God I am so amazing. The EventId is found on the Event’s page. As shown in the below screenshot, this one’s EventId is 185454262",
+                "note": "NOTE: In order for a user to verify themselves, they must have an EmeraldID. If they don’t it will automatically prompt them to get one. The EventId is found on the Event’s page.",
                 "imgLinkUsage": "/cardCommands/cardCommandFloatVerifier.png",
                 "imgLinkResult": ""
             }

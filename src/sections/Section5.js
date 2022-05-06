@@ -15,7 +15,9 @@ export function Section5(){
                   {command, commandDescription, param1, param2, param3, param4, imgLinkUsage, imgLinkResult, note}
                   ) => {
                 return (
+                  <>
                   <Card 
+                  key={command}
                   command={command}
                   commandDescription={commandDescription}
                   param1={param1}
@@ -26,9 +28,11 @@ export function Section5(){
                   imgLinkUsage={imgLinkUsage} 
                   imgLinkResult={imgLinkResult}
                   />
+                  </>
                 )
               })}
             </CardsWrapper>
+
         </SectionWrapper>
     )
 }
@@ -59,18 +63,8 @@ const CardsWrapper = styled.div`
       -webkit-transform: perspective(500px) rotateY(12deg) scale(0.9);
     }
 
-    div:nth-child(1):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-    }
-
     div:nth-child(2n){
       transform-style: preserve-3d;
       -webkit-transform: perspective(500px) rotateY(-12deg) scale(0.9);
-    }
-
-    div:nth-child(2):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
     }
 `

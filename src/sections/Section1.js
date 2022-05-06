@@ -22,8 +22,13 @@ const SectionWrapper = styled.div`
     gap: 20px;
     padding: 40px;
 
+    h1{
+        -webkit-text-stroke:1.4px white;
+    }
+
     p{
       width: 700px; 
       line-height: 30px;
+      color: white;
     }
 `

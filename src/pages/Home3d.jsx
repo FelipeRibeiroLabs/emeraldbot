@@ -9,14 +9,13 @@ import {
 
 import { EffectComposer, DepthOfField} from '@react-three/postprocessing'
 
-import EmeraldBot from "./components/EmeraldBot.jsx";
-import Navbar from "./components/Navbar";
-import { Composition } from "./components/Composition.jsx";
-import {Section2} from "./sections/Section2"
-import { Section1 } from "./sections/Section1.js";
-import { Section3 } from "./sections/Section3.js";
-import { Section4 } from "./sections/Section4.js";
-import { Section5 } from "./sections/Section5.js";
+import Navbar from "../components/Navbar";
+import { Composition } from "../components/Composition.jsx";
+import { Section1 } from "../sections/Section1.js";
+import { Section2 } from "../sections/Section2"
+import { Section3 } from "../sections/Section3.js";
+import { Section4 } from "../sections/Section4.js";
+import { Section5 } from "../sections/Section5.js";
 
 const Effects = forwardRef((props, ref) => {
 
@@ -29,7 +28,7 @@ const Effects = forwardRef((props, ref) => {
 })
 
 
-export default function App() {
+export default function Home3d() {
 
 
   return (
@@ -39,8 +38,6 @@ export default function App() {
         <Suspense fallback={null}>
         
           <ScrollControls damping={2} pages={6} style={{ width: "100vw" }}>
-            
-            {/* <EmeraldBot scale={0.01} position={[10, 10, 10]} /> */}
 
             <Composition />
 
@@ -64,12 +61,3 @@ export default function App() {
     </>
   );
 }
-
-// import {BrowserRouter as Router} from 'react-router-dom'
-// import {Home3d} from './pages/Home3d'
-
-// export default function App() {
-//   return (
-
-//   )
-// }
