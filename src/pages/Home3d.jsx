@@ -22,14 +22,13 @@ const Effects = forwardRef((props, ref) => {
  
   return (
     <EffectComposer>
-    <DepthOfField focusDistance={0.06} focalLength={0.2} bokehScale={2} height={480} />
-  </EffectComposer>
+      <DepthOfField focusDistance={0.06} focalLength={0.2} bokehScale={2} height={480} />
+    </EffectComposer>
   )
 })
 
 
-export default function Home3d() {
-
+export function Home3d() {
 
   return (
     <>
@@ -37,7 +36,7 @@ export default function Home3d() {
         
         <Suspense fallback={null}>
         
-          <ScrollControls damping={2} pages={6} style={{ width: "100vw" }}>
+          <ScrollControls damping={2} pages={7} style={{ width: "100vw" }}>
 
             <Composition />
 

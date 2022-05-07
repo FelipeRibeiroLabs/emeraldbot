@@ -56,6 +56,7 @@ const CardsWrapper = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    flex-wrap: wrap;
     left: 20px;
 
     div:nth-child(1){

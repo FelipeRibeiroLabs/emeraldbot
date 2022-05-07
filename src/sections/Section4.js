@@ -54,6 +54,7 @@ const CardsWrapper = styled.div`
     justify-content: center;
     position: relative;
     left: 20px;
+    flex-wrap: wrap;
 
     div:nth-child(1){
       transform-style: preserve-3d;

@@ -78,11 +78,10 @@ const CardsWrapper = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     position: sticky;
+    flex-wrap: wrap;
     left: 20px;
     z-index: 99;
-
 
     div:nth-child(1){
       transform-style: preserve-3d;

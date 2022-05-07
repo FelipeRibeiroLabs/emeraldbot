@@ -1,75 +1,21 @@
-import { Suspense, forwardRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import React from 'react'
 import {
-  Preload,
-  ScrollControls,
-  Scroll,
-  Loader,
-} from "@react-three/drei";
-
-import { EffectComposer, DepthOfField} from '@react-three/postprocessing'
-
-import EmeraldBot from "./components/EmeraldBot.jsx";
-import Navbar from "./components/Navbar";
-import { Composition } from "./components/Composition.jsx";
-import {Section2} from "./sections/Section2"
-import { Section1 } from "./sections/Section1.js";
-import { Section3 } from "./sections/Section3.js";
-import { Section4 } from "./sections/Section4.js";
-import { Section5 } from "./sections/Section5.js";
-
-const Effects = forwardRef((props, ref) => {
-
- 
-  return (
-    <EffectComposer>
-    <DepthOfField focusDistance={0.06} focalLength={0.2} bokehScale={2} height={480} />
-  </EffectComposer>
-  )
-})
-
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import {Home3d} from './pages/Home3d'
+import {Home} from './pages/Home'
+import {Choose} from './pages/Choose'
 
 export default function App() {
-
-
   return (
-    <>
-      <Canvas id="canvas" gl={{ antialias: false }} dpr={[1, 2]}>
-        
-        <Suspense fallback={null}>
-        
-          <ScrollControls damping={2} pages={6} style={{ width: "100vw" }}>
-            
-            {/* <EmeraldBot scale={0.01} position={[10, 10, 10]} /> */}
-
-            <Composition />
-
-            <Scroll html>
-              <Navbar />
-              <Section1 />
-              <Section2 />
-              <Section3 />
-              <Section4 />
-              <Section5 />
-            </Scroll>
-            <Effects />
-
-          </ScrollControls>
-          <Preload />
-
-        </Suspense>
-
-      </Canvas>
-      <Loader />
-    </>
-  );
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Choose />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/home3d" element={<Home3d />} />
+        </Routes>
+      </BrowserRouter>
+  )
 }
-
-// import {BrowserRouter as Router} from 'react-router-dom'
-// import {Home3d} from './pages/Home3d'
-
-// export default function App() {
-//   return (
-
-//   )
-// }
