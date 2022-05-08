@@ -1,90 +1,18 @@
 import { Card } from "../components/Card";
 
 import styled from "styled-components"
+import infos from "../data/CommandsInfos.json"
 
-export function Section3(){
 
-    return (
-        <SectionWrapper>
-            <h3>Emerald Bot Commands</h3>
-            <CardsWrapper>
-              <Card 
-              command="/identity" 
-              commandDescription="Allows you to get on-chain information about a Discord user (their address, .find, .fn, and EmeraldID status)." 
-              param1="1- A Discord User" 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/resolve" 
-              commandDescription="Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all the roles they have in your Discord." 
-              param1="1- A Blocto wallet address, a .find name, or a .fn name." 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/momentsinset" 
-              commandDescription="Allows you to view the moments an NBATopShot user has inside a certain set." 
-              param1="1- A Dapper wallet address (ex. 0x84efe65bd9993ff8)" 
-              param2="2- The set name (ex. Cool Cats)" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-            </CardsWrapper>
-            <CardsWrapper>
-              <Card 
-              command="/togglerole" 
-              commandDescription="Allows a user to give or remove a specific role from themselve" 
-              param1="1- A role for the user to toggle on themselves" 
-              param2="2- A description of what this is for" 
-              param3="3- OPTIONAL: URL to an image (ex. https://i.imgur.com/27H7J1a.png)" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/god" 
-              commandDescription="Try it out. It’s pretty self explanatory." 
-              param1="" 
-              param2="" 
-              param3="" 
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-              <Card 
-              command="/userswithrole" 
-              commandDescription="Return a CSV file containing the users and their corresponding wallet address for people who have a specific role. You can download the file by clicking the downward facing arrow in the bottom right." 
-              param1="1- The role to look for" 
-              param2="" 
-              param3="" 
-              note="NOTE: The bot will only be able to provide wallet addresses for people who have an EmeraldID. Otherwise, it will produce “N/A”"
-              imgLinkUsage="" 
-              imgLinkResult=""/>
-            </CardsWrapper>
-        </SectionWrapper>
-    )
-}
+export function Section3({devices}){
+  const emeraldBotCommands = infos[0].emeraldBotCommands
+  const emeraldBotCommands2 = infos[1].emeraldBotCommands2
 
-const SectionWrapper = styled.div`
-    height: 120vh;
+  const CardsWrapper = styled.div`
+    width: 100%;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 40px;
-    
-
-    h1{
-      font-size: 4rem;
-    }
-`
-
-const CardsWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    left: 20px;
-    z-index: 99;
+    flex-direction:row;
+    flex-wrap: wrap;
 
 
     div:nth-child(1){
@@ -92,20 +20,8 @@ const CardsWrapper = styled.div`
       -webkit-transform: perspective(500px) rotateY(12deg) scale(0.9);
     }
 
-    div:nth-child(1):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
-    }
-
     div:nth-child(2n){
       -webkit-transform: scale(0.9);
-    }
-
-    div:nth-child(2):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
     }
 
     div:nth-child(3n){
@@ -113,9 +29,97 @@ const CardsWrapper = styled.div`
       -webkit-transform: perspective(500px) rotateY(-12deg) scale(0.9);
     }
 
-    div:nth-child(3):hover{
-      -webkit-transform: scale(1.2);
-      transition: .5s;
-      transition-timing-function: ease-in-out;
+    @media ${devices.mobile} {
+      flex-direction:column;
+      div:nth-child(1){
+        transform-style: preserve-3d;
+        -webkit-transform: perspective(0px) rotateY(0deg) scale(0.9);
+      }
+      div:nth-child(3){
+        transform-style: preserve-3d;
+        -webkit-transform: perspective(0px) rotateY(0deg) scale(0.9);
+      }
+    }
+    
+   
+    @media ${devices.tablet} {
+      div:nth-child(1){
+        transform-style: preserve-3d;
+        -webkit-transform: perspective(0px) rotateY(0deg) scale(0.9);
+      }
+      div:nth-child(3){
+        transform-style: preserve-3d;
+        -webkit-transform: perspective(0px) rotateY(0deg) scale(0.9);
+      }
+    }
+    
+    @media ${devices.laptop} {
     }
 `
+  
+    return (
+        <SectionWrapper>
+            <h3>Emerald Bot Commands</h3>
+            <CardsWrapper>
+              { emeraldBotCommands.map(
+                (
+                  {command, commandDescription, param1, param2, param3, param4, imgLinkUsage, imgLinkResult, note}
+                  ) => {
+                return (
+                  <Card 
+                  key={command}
+                  command={command}
+                  commandDescription={commandDescription}
+                  param1={param1}
+                  param2={param2} 
+                  param3={param3} 
+                  param4={param4} 
+                  note={note}
+                  imgLinkUsage={imgLinkUsage} 
+                  imgLinkResult={imgLinkResult}
+                  />
+                )
+              })}
+            </CardsWrapper>
+
+            <CardsWrapper>
+              { emeraldBotCommands2.map(
+                (
+                  {command, commandDescription, param1, param2, param3, param4, imgLinkUsage, imgLinkResult, note}
+                  ) => {
+                return (
+                  <Card 
+                  key={command}
+                  command={command}
+                  commandDescription={commandDescription}
+                  param1={param1}
+                  param2={param2} 
+                  param3={param3} 
+                  param4={param4} 
+                  note={note}
+                  imgLinkUsage={imgLinkUsage} 
+                  imgLinkResult={imgLinkResult}
+                  />
+                )
+              })}
+            </CardsWrapper>
+        </SectionWrapper>
+    )
+}
+
+const SectionWrapper = styled.div`    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    margin: 150px 0;
+    
+
+    h1{
+      font-size: 4rem;
+    }
+`
+
