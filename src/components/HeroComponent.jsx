@@ -6,7 +6,7 @@ export default function HeroComponent({vpWidth}) {
   return (
 
     <group position-z={-0.3}>
-    <Box
+    {/* <Box
       flexDirection="row"
       alignItems="center"
       justifyContent="center"
@@ -20,7 +20,7 @@ export default function HeroComponent({vpWidth}) {
           Flexing some Layout
         </Text>
       </Box> */}
-    </Box>
+    
     <Box
       flexDirection="column"
       alignItems="flex-start"
@@ -30,8 +30,8 @@ export default function HeroComponent({vpWidth}) {
       marginTop={0.1}
       marginBottom={0.5}
     >
-      <Box marginLeft={0.3}>
-        <Text fontSize={0.4} maxWidth={vpWidth} textAlign="left">
+      <Box marginLeft={vpWidth > 5 ? 0.3: 0}>
+        <Text bold={true} fontSize={vpWidth > 5 ? 0.5: 0.2} maxWidth={vpWidth} textAlign="left">
           Emerald Bot
         </Text>
       </Box>

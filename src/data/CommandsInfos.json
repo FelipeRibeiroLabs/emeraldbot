@@ -31,12 +31,8 @@
                 "note": "",
                 "imgLinkUsage": "/cardCommands/cardCommandMomentsInSet.png",
                 "imgLinkResult": ""
-            }
-        ]
-    },
-    {
-        "emeraldBotCommands2":
-        [ 
+            },
+     
             {
                 "command": "/togglerole",
                 "commandDescription": "Allows a user to give or remove a specific role from themselve",

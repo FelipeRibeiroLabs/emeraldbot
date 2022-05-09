@@ -90,6 +90,8 @@ export default function App() {
   const [pages, setPages] = useState(0);
   return (
     <>
+          {/* <Navbar /> */}
+
       <Canvas
         // raycaster={{ enabled: false }}
         // dpr={[1, 1]}
@@ -121,10 +123,10 @@ export default function App() {
           <Page onChangePages={setPages} state={state} />
           <Image
             url="/Home.png"
-            position={[0, 0, -4]}
-            scale={3}
-            // transparent
-            opacity={1}
+            position={[0, 0, -2]}
+            scale={11}
+            transparent
+            opacity={0.5}
           />
         </Suspense>
         {/* <Effects /> */}

@@ -3,17 +3,19 @@ import { Flex, Box, useReflow } from "@react-three/flex";
 import Text from "./Text";
 import CardModel from "./CardModel";
 import CardsComponent from "./CardsComponent";
+import infos from "../data/CommandsInfos.json"
 
 export default function AccessCommands({ vpWidth, viewport, cardTexture }) {
-    const cards = [0,1]
-    const cardProps ={viewport, cardTexture , cards}
+  const commands = infos[2].gatedAccess
+
+    const cardProps ={viewport, cardTexture , commands}
 
   return (
     <>
       <group position-z={0.2}>
         <Box
           flexDirection="column"
-          alignItems="flex-start"
+          alignItems="center"
           justifyContent="center"
           width="100%"
           marginTop={0.8}
@@ -21,8 +23,9 @@ export default function AccessCommands({ vpWidth, viewport, cardTexture }) {
         >
           <Box margin={0.1}>
             <Text
-              fontSize={0.2}
-              letterSpacing={0.1}
+             bold
+             fontSize={viewport.width > 5 ? 0.2 : 0.12}
+              letterSpacing={0.02}
               maxWidth={vpWidth * 0.8}
               textAlign="center"
             >

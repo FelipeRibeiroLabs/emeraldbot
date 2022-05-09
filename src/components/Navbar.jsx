@@ -9,12 +9,12 @@ export default function Navbar() {
     <main style={{display:"flex"}}>
          <li>
         <a className="nav-link">
-            Link
+            COMMANDS
         </a>
       </li>
       <li>
         <a className="nav-link">
-            Link 2
+            DOCS
         </a>
       </li>
       

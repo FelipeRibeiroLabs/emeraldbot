@@ -220,7 +220,7 @@ p {
   font-family: 'JetBrains Mono', monospace;
   font-size: 18px;
   color: #11F6D4;
-  margin-left: 1.6rem;
+  margin-left: 2rem;
 }
 
 nav {
@@ -230,9 +230,9 @@ nav {
   justify-content: space-between;
   padding-left: 4.2rem;
   padding-top: 0.8rem;
-  padding-right: 4.2rem;
+  padding-right: 8.2rem;
   list-style-type: none;
-  gap: 10px;
+  gap: 20px;
   background: transparent;
 }
 

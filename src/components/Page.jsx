@@ -12,6 +12,7 @@ import * as THREE from "three";
 
 import EmeraldBot from "./EmeraldBot";
 import HeroComponent from "./HeroComponent";
+import Navbar from "./Navbar";
 
 import Text from "./Text";
 import DescriptionComponent from "./DescriptionComponent";
@@ -32,9 +33,18 @@ export default function Page({ onChangePages, state }) {
     (w, h) => {
       // handles the height of the whole page
       console.log("vpWidth", viewport.width);
-      viewport.width < 6
-        ? onChangePages(h / vpHeight / 1.6)
-        : onChangePages(h / vpHeight / 1.7);
+      const vw = viewport.width;
+
+      if (vw < 5) {
+        console.log("s");
+        onChangePages(h / vpHeight / 2.35);
+      } else if (vw > 5 && vw < 6) {
+        console.log("m");
+        onChangePages(h / vpHeight / 2.15);
+      } else {
+        console.log("l");
+        onChangePages(h / vpHeight / 1.8);
+      }
 
       // console.log({ h, vpHeight, pages: h / vpHeight });
     },
@@ -62,6 +72,12 @@ export default function Page({ onChangePages, state }) {
         onReflow={handleReflow}
         position={[-vpWidth / 2, vpHeight / 2, 0]}
       >
+        <Box marginTop={0.1}   >
+        <Html>
+          <Navbar />
+        </Html>
+        </Box>
+       
         <HeroComponent vpWidth={vpWidth} />
         <DescriptionComponent vpWidth={vpWidth} />
         <MainCommands {...commandsProps} />

@@ -3,19 +3,20 @@ import { Flex, Box, useReflow } from "@react-three/flex";
 import Text from "./Text";
 import CardModel from "./CardModel";
 import CardsComponent from "./CardsComponent";
+import infos from "../data/CommandsInfos.json"
 
 export default function MainCommands({ vpWidth, viewport, cardTexture }) {
 
-    const cards = [0,1,2,3,4,5]
+    const emeraldBotCommands = infos[0].emeraldBotCommands
 
-    const cardProps ={viewport, cardTexture , cards}
+    const cardProps ={viewport, cardTexture , commands: emeraldBotCommands}
 
   return (
     <>
       <group position-z={0.2}>
         <Box
           flexDirection="column"
-          alignItems="flex-start"
+          alignItems="center"
           justifyContent="center"
           width="100%"
           marginTop={0.8}
@@ -23,10 +24,11 @@ export default function MainCommands({ vpWidth, viewport, cardTexture }) {
         >
           <Box margin={0.1}>
             <Text
-              fontSize={0.2}
+              fontSize={viewport.width > 5 ? 0.2 : 0.12}
               letterSpacing={0.1}
               maxWidth={vpWidth * 0.8}
               textAlign="center"
+              bold
             >
               Main Commands
             </Text>
