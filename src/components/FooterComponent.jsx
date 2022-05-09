@@ -25,12 +25,13 @@ export default function FooterComponent({ vpWidth }) {
         </Box>
         <Box margin={0.1}>
           <Text
-            fontSize={0.2}
+            secondary
+            fontSize={vpWidth > 5 ? 2 : 0.04}
             letterSpacing={0.1}
             maxWidth={vpWidth * 0.8}
             textAlign="center"
           >
-            Subtitle
+            CREATED BY EMERALD CITY DAO
           </Text>
         </Box>
       </Box>

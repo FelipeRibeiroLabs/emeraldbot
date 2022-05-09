@@ -98,7 +98,6 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
                   fontSize={0.08}
                   letterSpacing={0.1}
                   textAlign="center"
-                  color="#11F6D4"
                   secondary
                 >
                   SEE EXAMPLE

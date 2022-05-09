@@ -16,8 +16,10 @@ export default function Text({
   let font = "";
   if (!secondary) {
     font = bold ? "/Poppins-ExtraBold.ttf" : "/Poppins-Medium.ttf";
+    color = "white";
   } else {
     font = "/JetBrainsMono-Medium.ttf";
+    color = "#11F6D4";
   }
 
   return (

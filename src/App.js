@@ -78,11 +78,6 @@ import Footer from "./components/FooterComponent.jsx";
 // });
 
 
-
-
-
-
-
 export default function App() {
   const scrollArea = useRef();
   const onScroll = (e) => (state.top = e.target.scrollTop);
