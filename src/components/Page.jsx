@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from "react";
 import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
-import { useAspect, Html, TorusKnot, Plane } from "@react-three/drei";
+import { useAspect, Html, TorusKnot, Plane, Backdrop, Environment } from "@react-three/drei";
 import { Flex, Box, useReflow } from "@react-three/flex";
 import * as THREE from "three";
 
@@ -50,6 +50,7 @@ export default function Page({ onChangePages, state }) {
   );
 
   const cardTexture = useLoader(THREE.TextureLoader, "/card-1.png");
+  const bgTexture = useLoader(THREE.TextureLoader, "/Home.png");
 
   const commandsProps = {
     vpWidth,
@@ -59,12 +60,20 @@ export default function Page({ onChangePages, state }) {
 
   return (
     <group ref={group}>
+      <Environment background near={1} far={1000} resolution={256}>
+  <mesh scale={100}>
+    <sphereGeometry args={[1, 64, 64]} />
+    <meshBasicMaterial map={bgTexture} side={THREE.BackSide} />
+  </mesh>
+</Environment>
+     
       <EmeraldBot
         viewHeight={viewport.height}
-        scale={3}
-        position={[viewport.width < 6 ? 0 : 2, 0, -3]}
+        // scale={3}
+        position={[viewport.width < 6 ? 0 : 0.3, 0, 0.5]}
         offset={group.current}
       />
+     
       <Flex
         flexDirection="column"
         size={[vpWidth, vpHeight, 0]}

@@ -4,12 +4,24 @@ import Text from "./Text";
 import { RoundedBox, Html } from "@react-three/drei";
 
 export default function HeroComponent({ vpWidth }) {
+
+  console.log("vpWidth2", vpWidth)
   const subtitleStyle = {
     width: "100px",
     borderRadius: "20px",
     borderColor: "#6FFFE9",
     backgroundColor: "#6FFFE9",
   };
+
+  let marginTop;
+
+  if (vpWidth > 6) {
+    marginTop = "12rem";
+  } else if (vpWidth <= 6 && vpWidth >= 5) {
+    marginTop = "14.5rem";
+  } else {
+    marginTop = "8rem";
+  }
 
   return (
     <group position-z={-0.3}>
@@ -47,11 +59,12 @@ export default function HeroComponent({ vpWidth }) {
             <button
               style={{
                 textAlign: "center",
-                width: vpWidth > 5 ? "24vw" : "40vw",
+                width: vpWidth > 5 ? "24vw" : "36vw",
+                // height: vpWidth > 5 ? "6vw" : "8vw",
                 background: "transparent",
                 border: "3px solid #00F5D0",
                 borderRadius: "12px",
-                marginTop: vpWidth > 5 ? "14.5rem" : "10rem",
+                marginTop,
               }}
             >
               <h2 style={{ fontSize: vpWidth > 5 ? "2em" : "1em" }}>

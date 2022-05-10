@@ -39,6 +39,7 @@ import Navbar from "./components/Navbar";
 // import { Section4 } from "./sections/Section4.js";
 // import { Section5 } from "./sections/Section5.js";
 import Footer from "./components/FooterComponent.jsx";
+import BackgroundImage from "./components/BackgroundImage";
 
 // const sizes = {
 //   mobileS: "320px",
@@ -102,6 +103,7 @@ export default function App() {
         }}
         onCreated={({ gl }) => gl.setClearColor("black")}
       >
+        
         <pointLight position={[-10, -10, -10]} intensity={1} />
         <ambientLight intensity={0.4} />
         {/* <spotLight
@@ -114,15 +116,16 @@ export default function App() {
           shadow-mapSize-height={1024}
         /> */}
         <Suspense fallback={null}>
+        
           {/* <ContentComponent onReflow={setPages} state={state} /> */}
           <Page onChangePages={setPages} state={state} />
-          <Image
+          {/* <Image
             url="/Home.png"
             position={[0, 0, -2]}
             scale={11}
             transparent
-            opacity={0.5}
-          />
+            opacity={0.8}
+          /> */}
         </Suspense>
         {/* <Effects /> */}
       </Canvas>
