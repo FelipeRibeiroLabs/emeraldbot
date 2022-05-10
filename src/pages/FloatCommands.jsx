@@ -6,15 +6,16 @@ import Card2d from "../components/Card2d";
 import styled from "styled-components"
 
 import infos from "../data/CommandsInfos.json"
+import FooterComponent from "../components/FooterComponent2d";
   
-  export default function EmeraldBotCommands({ onChangePages, state }) {
+  export default function FloatCommands({ onChangePages, state }) {
 
-    const commands = infos[0].emeraldBotCommands
+    const commands = infos[1].floatCommands
 
     return (
           <Wrapper>
             <Navbar />
-            <h1>Emerald Bot Commands</h1>
+            <h1>Float Commands</h1>
             <CardsWrapper>
 
               {commands.map((c) => {
@@ -29,6 +30,7 @@ import infos from "../data/CommandsInfos.json"
                 )
               })}
             </CardsWrapper>
+            <FooterComponent />
           </Wrapper>
     );
   }

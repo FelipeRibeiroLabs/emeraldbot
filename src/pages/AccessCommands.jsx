@@ -7,9 +7,9 @@ import styled from "styled-components"
 
 import infos from "../data/CommandsInfos.json"
   
-  export default function EmeraldBotCommands({ onChangePages, state }) {
+  export default function AccessCommands({ onChangePages, state }) {
 
-    const commands = infos[0].emeraldBotCommands
+    const commands = infos[2].gatedAccess
 
     return (
           <Wrapper>

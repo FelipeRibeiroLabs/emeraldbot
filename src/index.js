@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import Navbar from './components/Navbar';
-import EmeraldBotCommands from './pages/EmeraldBotCommands';
 import './styles.css'
 
 function Overlay() {
