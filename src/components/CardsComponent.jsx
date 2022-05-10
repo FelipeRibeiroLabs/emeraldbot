@@ -4,7 +4,51 @@ import CardModel from "./CardModel";
 import Text from "./Text";
 
 export default function CardsComponent({ viewport, cardTexture, commands }) {
-  console.log("commands", commands)
+  console.log("commands", commands);
+
+  function handleCardsRotation(size, i) {
+    let yRotation;
+    let isLateral = false;
+
+    switch (i) {
+      case 0:
+        // if size === L || M
+        yRotation = size === "L" || size === "M" ? 0.2 : 0;
+        isLateral = true;
+        break;
+      case 1:
+        yRotation = size === "M" ? -0.2 : 0;
+        isLateral = size === "L" && true;
+        break;
+      case 2:
+        if(size === "L") yRotation = -0.2
+        if(size === "M") yRotation = 0.2
+        if(size === "S") yRotation = 0
+        isLateral = true;
+        break;
+      case 3:
+        if(size === "L") yRotation = 0.2
+        if(size === "M") yRotation = -0.2
+        if(size === "S") yRotation = 0  
+        isLateral = true;
+        break;
+      case 4:
+        if(size === "L") yRotation = 0
+        if(size === "M") yRotation = 0.2
+        if(size === "S") yRotation = 0  
+        isLateral = size === "L" && true;
+        break;
+      case 5:
+        yRotation = size === "L" || size === "M" ? -0.2 : 0;
+        isLateral = true;
+        break;
+
+      default:
+        break;
+    }
+
+    return { yRotation, isLateral };
+  }
 
   return (
     <Box
@@ -14,46 +58,31 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
       flexWrap="wrap"
       width="100%"
       // flexBasis= "33.333333%"
-
       // width="70%"
     >
       {commands.map((command, i) => {
-        let yRotation = 0;
-        let isLateral = false;
+        // let yRotation = 0;
+        // let isLateral = false;
 
-        console.log("vw", viewport.width);
-        switch (i) {
-          case 0:
-            viewport.width >= 5 ? (yRotation = 0.2) : (yRotation = 0);
-            isLateral = true;
-            break;
-          case 1:
-            viewport.width >= 5 ? (yRotation = -0.2) : (yRotation = 0);
-            isLateral = true;
-            break;
+        // console.log("vw", viewport.width);
+        const vpWidth = viewport.width;
+        let res;
 
-          case 2:
-            viewport.width >= 5 ? (yRotation = 0.2) : (yRotation = 0);
-            isLateral = true;
-            break;
-
-          case 3:
-            viewport.width >= 5 ? (yRotation = -0.2) : (yRotation = 0);
-            isLateral = true;
-
-            break;
-          case 4:
-            viewport.width >= 5 ? (yRotation = 0.2) : (yRotation = 0);
-            isLateral = true;
-            break;
-          case 5:
-            viewport.width >= 5 ? (yRotation = -0.2) : (yRotation = 0);
-            isLateral = true;
-            break;
-
-          default:
-            break;
+        if (vpWidth > 6) {
+          // the viewport size it´s Large
+          res = handleCardsRotation("L", i);
+        } else if (vpWidth <= 6 && vpWidth >= 5) {
+          // the viewport size it´s Medium
+          res = handleCardsRotation("M", i);
+        } else {
+          // the viewport size it´s Small
+          res = handleCardsRotation("S", i);
         }
+
+        console.log("res", res)
+        const isLateral = res.isLateral;
+        const yRotation = res.yRotation;
+
         return (
           <Box
             flexDirection="column"
@@ -63,23 +92,28 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
             margin={0.5}
             key={i}
           >
-            <mesh rotation={[0, yRotation, 0]} position={[0.5, -0.5, 0]}>
-              <planeBufferGeometry args={[1, 1.4]} />
-              <meshBasicMaterial map={cardTexture} opacity={0.46} transparent />
-            </mesh>
-            <Box height={0.1}   flexDirection="column" padding={0}>
-              <Text
-                bold={true}
-                yRot={yRotation}
-                fontSize={0.08}
-                letterSpacing={0.05}
-                textAlign="center"
-              >
-                {command.command}
-              </Text>
-            </Box>
-            {/* <Box flexDirection="column" padding={0.1}> */}
-              <Box marginTop={0.1} height={0.5} >
+            {/* <group> */}
+              <mesh rotation={[0, yRotation, 0]} position={[0.5, -0.5, 0]}>
+                <planeBufferGeometry args={[1, 1.4]} />
+                <meshBasicMaterial
+                  map={cardTexture}
+                  opacity={0.46}
+                  transparent
+                />
+              </mesh>
+              <Box height={0.1} flexDirection="column" padding={0}>
+                <Text
+                  bold={true}
+                  yRot={yRotation}
+                  fontSize={0.08}
+                  letterSpacing={0.05}
+                  textAlign="center"
+                >
+                  {command.command}
+                </Text>
+              </Box>
+              {/* <Box flexDirection="column" padding={0.1}> */}
+              <Box marginTop={0.1} height={0.5}>
                 <Text
                   maxWidth={0.6}
                   yRot={yRotation}
@@ -89,21 +123,22 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
                 >
                   {command.commandDescription}
                 </Text>
-              {/* </Box> */}
-            </Box>
-            <Box height={0.2}  flexDirection="column" padding={0.1}>
-              <Box>
-                <Text
-                  yRot={yRotation}
-                  fontSize={0.08}
-                  letterSpacing={0.1}
-                  textAlign="center"
-                  secondary
-                >
-                  SEE EXAMPLE
-                </Text>
+                {/* </Box> */}
               </Box>
-            </Box>
+              <Box height={0.2} flexDirection="column" padding={0.1}>
+                <Box>
+                  <Text
+                    yRot={yRotation}
+                    fontSize={0.08}
+                    letterSpacing={0.1}
+                    textAlign="center"
+                    secondary
+                  >
+                    SEE EXAMPLE
+                  </Text>
+                </Box>
+              </Box>
+            {/* </group> */}
           </Box>
         );
       })}
