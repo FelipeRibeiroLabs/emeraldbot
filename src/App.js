@@ -1,4 +1,3 @@
-// import { Suspense, forwardRef } from "react";
 import React, {
   Suspense,
   forwardRef,
@@ -39,6 +38,7 @@ import Navbar from "./components/Navbar";
 // import { Section4 } from "./sections/Section4.js";
 // import { Section5 } from "./sections/Section5.js";
 import Footer from "./components/FooterComponent.jsx";
+import EmeraldBotCommands from "./pages/EmeraldBotCommands";
 
 // const sizes = {
 //   mobileS: "320px",
@@ -85,14 +85,8 @@ export default function App() {
   const [pages, setPages] = useState(0);
   return (
     <>
-          {/* <Navbar /> */}
-
       <Canvas
-        // raycaster={{ enabled: false }}
-        // dpr={[1, 1]}
-        // camera={{ position: [0, 0, 10], far: 1000 }}
         camera={{ position: [0, 0, 2], zoom: 1 }}
-
         gl={{
           powerPreference: "high-performance",
           alpha: false,
@@ -106,16 +100,18 @@ export default function App() {
         <ambientLight intensity={0.4} />
         {/* <spotLight
           castShadow
-          angle={0.3}
-          penumbra={1}
+          angle={1.3}
+          penumbra={4}
           position={[0, 10, 20]}
-          intensity={5}
+          intensity={10}
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
         /> */}
         <Suspense fallback={null}>
           {/* <ContentComponent onReflow={setPages} state={state} /> */}
-          <Page onChangePages={setPages} state={state} />
+
+          {/* <Page onChangePages={setPages} state={state} /> */}
+          <EmeraldBotCommands onChangePages={setPages} state={state} />
           <Image
             url="/Home.png"
             position={[0, 0, -2]}
@@ -123,6 +119,7 @@ export default function App() {
             transparent
             opacity={0.5}
           />
+
         </Suspense>
         {/* <Effects /> */}
       </Canvas>

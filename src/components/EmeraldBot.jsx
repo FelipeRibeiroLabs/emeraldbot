@@ -28,17 +28,15 @@ export default function Model(props) {
     // const bg = bgRef.current;
 
     model.rotation.y = offset / 3
-    model.position.y = offset / props.viewHeight * 4
+    model.position.y = offset / props.viewHeight * 3.3
 
-    
   })
 
   return (
         <>
-        
           <group ref={group} position={props.position} rotation={[0, 2, 0]} scale={props.scale}>
         
-            <mesh castShadow receiveShadow geometry={nodes.emeraldbot_1.geometry}  material-color={"#00FFD9"} />
+            <mesh castShadow receiveShadow geometry={nodes.emeraldbot_1.geometry}  material-color={"#3efade"} />
             <mesh castShadow receiveShadow geometry={nodes.emeraldbot_2.geometry} material={materials['flowbot:phong2']} />
             <mesh castShadow receiveShadow geometry={nodes.emeraldbot_3.geometry} material={materials['flowbot:phong3']} />
             <mesh castShadow receiveShadow geometry={nodes.emeraldbot_4.geometry} material-color={"#2FD1B9"} />

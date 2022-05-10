@@ -1,8 +1,8 @@
 import React from "react";
 import { useReflow } from "@react-three/flex";
-import { Text as TextImpl } from "@react-three/drei";
+import { Text as TextStrokeImpl } from "@react-three/drei";
 
-export default function Text({
+export default function TextStroke({
   secondary = false,
   color = "white",
   yRot = 0,
@@ -23,19 +23,17 @@ export default function Text({
   }
 
   return (
-    <TextImpl
+    <TextStrokeImpl
       rotation={[0, yRot, 0]}
       color={color}
       anchorX={anchorX}
       anchorY={anchorY}
       textAlign={textAlign}
       font={font}
+      fillOpacity={0}
+      strokeWidth={'1%'}
+      strokeColor="#ffffff"
       onSync={reflow}
-      outlineOffsetX={'3%'}
-      outlineOffsetY={'5%'}
-      outlineBlur={'20%'}
-      outlineOpacity={0.3}
-      outlineColor="#356f1d"
       {...props}
     />
   );

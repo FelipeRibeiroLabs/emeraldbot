@@ -25,7 +25,7 @@ export default function MainCommands({ vpWidth, viewport, cardTexture }) {
           <Box margin={0.1}>
             <Text
               fontSize={viewport.width > 5 ? 0.2 : 0.12}
-              letterSpacing={0.1}
+              letterSpacing={0.02}
               maxWidth={vpWidth * 0.8}
               textAlign="center"
               bold

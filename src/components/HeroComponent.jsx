@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Box, useReflow } from "@react-three/flex";
 import Text from "./Text";
+import TextStroke from "./TextStroke";
 import { RoundedBox, Html } from "@react-three/drei";
 
 export default function HeroComponent({ vpWidth }) {
@@ -23,16 +24,16 @@ export default function HeroComponent({ vpWidth }) {
         marginBottom={0.5}
       >
         <Box height={1.4} marginLeft={vpWidth > 5 ? 0.3 : 0}>
-          <Text
+          <TextStroke
             bold={true}
             fontSize={vpWidth > 5 ? 0.5 : 0.2}
             maxWidth={vpWidth}
             textAlign="left"
           >
             EMERALD
-          </Text>
+          </TextStroke>
           <Box marginTop={vpWidth > 5 ? 0.4 : 0.2}>
-            <Text
+            <TextStroke
               bold={true}
               fontSize={vpWidth > 5 ? 0.5 : 0.2}
               maxWidth={vpWidth}
@@ -40,7 +41,7 @@ export default function HeroComponent({ vpWidth }) {
               marginTop={1}
             >
               BOT{" "}
-            </Text>
+            </TextStroke>
           </Box>
 
           <Html>
@@ -51,7 +52,7 @@ export default function HeroComponent({ vpWidth }) {
                 background: "transparent",
                 border: "3px solid #00F5D0",
                 borderRadius: "12px",
-                marginTop: vpWidth > 5 ? "14.5rem" : "10rem",
+                marginTop: vpWidth > 5 ? "16.5rem" : "10rem",
               }}
             >
               <h2 style={{ fontSize: vpWidth > 5 ? "2em" : "1em" }}>

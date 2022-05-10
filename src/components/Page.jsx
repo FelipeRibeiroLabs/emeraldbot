@@ -21,8 +21,10 @@ import FooterComponent from "./FooterComponent";
 
 export default function Page({ onChangePages, state }) {
   const group = useRef();
+
   const { size, viewport } = useThree();
   const [vpWidth, vpHeight] = useAspect(size.width, size.height);
+
   const vec = new THREE.Vector3();
 
   useFrame(() =>
@@ -65,6 +67,7 @@ export default function Page({ onChangePages, state }) {
         position={[viewport.width < 6 ? 0 : 2, 0, -3]}
         offset={group.current}
       />
+      
       <Flex
         flexDirection="column"
         size={[vpWidth, vpHeight, 0]}

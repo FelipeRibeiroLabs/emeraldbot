@@ -67,7 +67,7 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
               <planeBufferGeometry args={[1, 1.4]} />
               <meshBasicMaterial map={cardTexture} opacity={0.46} transparent />
             </mesh>
-            <Box height={0.1}   flexDirection="column" padding={0}>
+            <Box height={0.15}   flexDirection="column" padding={0}>
               <Text
                 bold={true}
                 yRot={yRotation}
@@ -83,7 +83,7 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
                 <Text
                   maxWidth={0.6}
                   yRot={yRotation}
-                  fontSize={0.05}
+                  fontSize={0.044}
                   letterSpacing={0.1}
                   textAlign="center"
                 >
