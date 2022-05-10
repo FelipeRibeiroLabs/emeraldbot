@@ -6,7 +6,14 @@ import React, {
   useCallback,
 } from "react";
 import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
-import { useAspect, Html, TorusKnot, Plane, Backdrop, Environment } from "@react-three/drei";
+import {
+  useAspect,
+  Html,
+  TorusKnot,
+  Plane,
+  Backdrop,
+  Environment,
+} from "@react-three/drei";
 import { Flex, Box, useReflow } from "@react-three/flex";
 import * as THREE from "three";
 
@@ -61,19 +68,19 @@ export default function Page({ onChangePages, state }) {
   return (
     <group ref={group}>
       <Environment background near={1} far={1000} resolution={256}>
-  <mesh scale={100}>
-    <sphereGeometry args={[1, 64, 64]} />
-    <meshBasicMaterial map={bgTexture} side={THREE.BackSide} />
-  </mesh>
-</Environment>
-     
+        <mesh scale={100}>
+          <sphereGeometry args={[1, 64, 64]} />
+          <meshBasicMaterial map={bgTexture} side={THREE.BackSide} />
+        </mesh>
+      </Environment>
+
       <EmeraldBot
         viewHeight={viewport.height}
         // scale={3}
         position={[viewport.width < 6 ? 0 : 0.3, 0, 0.5]}
         offset={group.current}
       />
-     
+
       <Flex
         flexDirection="column"
         size={[vpWidth, vpHeight, 0]}
@@ -81,9 +88,11 @@ export default function Page({ onChangePages, state }) {
         position={[-vpWidth / 2, vpHeight / 2, 0]}
       >
         <Box marginTop={0.1}>
-          <Html>
-            <Navbar />
-          </Html>
+          {vpWidth > 5 && (
+            <Html>
+              <Navbar vpWidth={vpWidth} />
+            </Html>
+          )}
         </Box>
         <HeroComponent vpWidth={vpWidth} />
         <DescriptionComponent vpWidth={vpWidth} />

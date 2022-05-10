@@ -215,6 +215,11 @@ p {
 
 /* NAV */
 
+header {
+  position: sticky;
+  top: 0;
+}
+
 .nav-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 18px;

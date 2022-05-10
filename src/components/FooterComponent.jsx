@@ -32,7 +32,7 @@ export default function FooterComponent({ vpWidth }) {
         >
           <Html>
             <main style={{ width: "12rem" }}>
-              <a href="https://hackernoon.com" style={{ color: "#11F6D4" }}>
+              <a href="https://discord.com/invite/emeraldcity" style={{ color: "#11F6D4" }}>
                 EMERALD CITY DAO
               </a>
             </main>

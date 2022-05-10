@@ -41,30 +41,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/FooterComponent.jsx";
 import BackgroundImage from "./components/BackgroundImage";
 
-// const sizes = {
-//   mobileS: "320px",
-//   mobileM: "375px",
-//   mobileL: "425px",
-//   tablet: "768px",
-//   laptop: "1024px",
-//   laptopL: "1440px",
-//   desktop: "2560px",
-// };
-
-// export const devices = {
-//   mobileS: `(min-width: ${sizes.mobileS})`,
-//   mobileM: `(min-width: ${sizes.mobileM})`,
-//   mobileL: `(min-width: ${sizes.mobileL})`,
-//   tablet: `(min-width: ${sizes.tablet})`,
-//   laptop: `(min-width: ${sizes.laptop})`,
-//   laptopL: `(min-width: ${sizes.laptopL})`,
-//   desktop: `(min-width: ${sizes.desktop})`,
-// };
-
-// const divProps = {
-//   marginLeft: "2rem",
-// };
-
 // const Effects = forwardRef((props, ref) => {
 //   return (
 //     <EffectComposer>
@@ -78,22 +54,21 @@ import BackgroundImage from "./components/BackgroundImage";
 //   );
 // });
 
-
 export default function App() {
   const scrollArea = useRef();
   const onScroll = (e) => (state.top = e.target.scrollTop);
   // useEffect(() => void onScroll({ target: scrollArea.current }), []);
   const [pages, setPages] = useState(0);
+
+  
+
   return (
     <>
-          {/* <Navbar /> */}
-
       <Canvas
         // raycaster={{ enabled: false }}
         // dpr={[1, 1]}
         // camera={{ position: [0, 0, 10], far: 1000 }}
         camera={{ position: [0, 0, 2], zoom: 1 }}
-
         gl={{
           powerPreference: "high-performance",
           alpha: false,
@@ -103,7 +78,6 @@ export default function App() {
         }}
         onCreated={({ gl }) => gl.setClearColor("black")}
       >
-        
         <pointLight position={[-10, -10, -10]} intensity={1} />
         <ambientLight intensity={0.4} />
         {/* <spotLight
@@ -116,7 +90,6 @@ export default function App() {
           shadow-mapSize-height={1024}
         /> */}
         <Suspense fallback={null}>
-        
           {/* <ContentComponent onReflow={setPages} state={state} /> */}
           <Page onChangePages={setPages} state={state} />
           {/* <Image
