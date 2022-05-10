@@ -1,5 +1,6 @@
 import React from "react";
 import { Flex, Box, useReflow } from "@react-three/flex";
+import { Html } from "@react-three/drei";
 import Text from "./Text";
 
 export default function FooterComponent({ vpWidth }) {
@@ -23,16 +24,29 @@ export default function FooterComponent({ vpWidth }) {
             Join Us!
           </Text>
         </Box>
-        <Box margin={0.1}>
-          <Text
+        <Box
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          width="8%"
+        >
+          <Html>
+            <main style={{ width: "12rem" }}>
+              <a href="https://hackernoon.com" style={{ color: "#11F6D4" }}>
+                EMERALD CITY DAO
+              </a>
+            </main>
+          </Html>
+          {/* <Text
             secondary
             fontSize={vpWidth > 5 ? 2 : 0.04}
             letterSpacing={0.1}
             maxWidth={vpWidth * 0.8}
             textAlign="center"
+            textDecoration
           >
-            CREATED BY EMERALD CITY DAO
-          </Text>
+            EMERALD CITY DAO
+          </Text> */}
         </Box>
       </Box>
     </group>
