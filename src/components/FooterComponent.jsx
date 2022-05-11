@@ -37,16 +37,6 @@ export default function FooterComponent({ vpWidth }) {
               </a>
             </main>
           </Html>
-          {/* <Text
-            secondary
-            fontSize={vpWidth > 5 ? 2 : 0.04}
-            letterSpacing={0.1}
-            maxWidth={vpWidth * 0.8}
-            textAlign="center"
-            textDecoration
-          >
-            EMERALD CITY DAO
-          </Text> */}
         </Box>
       </Box>
     </group>

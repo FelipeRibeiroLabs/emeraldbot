@@ -1,17 +1,11 @@
 import React, {
-  Suspense,
-  useEffect,
   useRef,
-  useState,
   useCallback,
 } from "react";
-import { Canvas, useThree, useFrame, useLoader } from "@react-three/fiber";
+import { useThree, useFrame, useLoader } from "@react-three/fiber";
 import {
   useAspect,
   Html,
-  TorusKnot,
-  Plane,
-  Backdrop,
   Environment,
 } from "@react-three/drei";
 import { Flex, Box, useReflow } from "@react-three/flex";
