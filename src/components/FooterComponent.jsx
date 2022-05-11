@@ -16,7 +16,6 @@ export default function FooterComponent({ vpWidth }) {
 
   return (
     <group position-z={0.4}>
-    
       <Box
         flexDirection="column"
         alignItems="center"
@@ -25,9 +24,9 @@ export default function FooterComponent({ vpWidth }) {
         marginTop={0.8}
         marginBottom={1}
       >
-          <mesh
+        <mesh
           rotation={[0, 0, 0]}
-          position={[0.7, desktop ? -0.6 : - 1.2, 0]}
+          position={[0.7, desktop ? -0.6 : -1.2, 0]}
           material={bottleMaterial}
         >
           <planeBufferGeometry args={[9, desktop ? 2 : 3]} />
@@ -40,7 +39,27 @@ export default function FooterComponent({ vpWidth }) {
             maxWidth={vpWidth * 0.8}
             textAlign="center"
           >
-            Join Us!
+            Emerald City
+          </Text>
+        </Box>
+        <Box margin={0.1}>
+          <Text
+            fontSize={0.1}
+            letterSpacing={0.1}
+            maxWidth={vpWidth * 0.8}
+            textAlign="center"
+          >
+            We are the first DAO on the Flow Blockchain
+          </Text>
+        </Box>
+        <Box margin={0}>
+          <Text
+            fontSize={0.1}
+            letterSpacing={0.1}
+            maxWidth={vpWidth * 0.8}
+            textAlign="center"
+          >
+            Educate, Build and Govern{" "}
           </Text>
         </Box>
         <Box
@@ -48,12 +67,27 @@ export default function FooterComponent({ vpWidth }) {
           alignItems="center"
           justifyContent="center"
           width="8%"
+          marginTop={0.1}
         >
           <Html>
             <main style={{ width: "12rem" }}>
-              <a href="https://discord.com/invite/emeraldcity" style={{ color: "#11F6D4" }}>
-                EMERALD CITY DAO
-              </a>
+              <button
+                style={{
+                  textAlign: "center",
+                  // width: vpWidth > 5 ? "24vw" : "36vw",
+                  // height: vpWidth > 5 ? "6vw" : "8vw",
+                  // background: "transparent",
+                  border: "3px solid #00F5D0",
+                  borderRadius: "12px",
+                  // marginTop,
+                  cursor: "pointer",
+                  fontSize: vpWidth > 5 ? "2em" : "1em",
+                }}
+              >
+                {/* <span style={{  }}> */}
+                {/* </span> */}
+                JOIN DAO
+              </button>
             </main>
           </Html>
         </Box>
