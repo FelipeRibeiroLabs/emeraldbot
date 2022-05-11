@@ -9,6 +9,7 @@ import React, {
   import Page from "../components/Page";
   
   import {Loader} from "@react-three/drei";
+import Navbar from "../components/Navbar";
   
   
   export default function App() {

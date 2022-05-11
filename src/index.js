@@ -17,7 +17,7 @@ function Overlay() {
   console.log("width", width);
   return (
     <>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           top: 0,
@@ -28,7 +28,7 @@ function Overlay() {
         }}
       >
         <Navbar toggleDrawer={toggleDrawer} />
-      </div>
+      </div> */}
       {width < 500 && (
         <>
           <header
