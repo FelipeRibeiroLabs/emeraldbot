@@ -78,8 +78,8 @@ export default function App() {
         }}
         onCreated={({ gl }) => gl.setClearColor("black")}
       >
-        <pointLight position={[-10, -10, -10]} intensity={1} />
-        <ambientLight intensity={0.4} />
+        {/* <pointLight position={[-10, -10, -10]} intensity={0.5} /> */}
+        <ambientLight intensity={0.2} />
         {/* <spotLight
           castShadow
           angle={0.3}

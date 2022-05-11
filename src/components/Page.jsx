@@ -13,6 +13,7 @@ import {
   Plane,
   Backdrop,
   Environment,
+  Ring
 } from "@react-three/drei";
 import { Flex, Box, useReflow } from "@react-three/flex";
 import * as THREE from "three";
@@ -67,6 +68,7 @@ export default function Page({ onChangePages, state }) {
 
   return (
     <group ref={group}>
+
       <Environment background near={1} far={1000} resolution={256}>
         <mesh scale={100}>
           <sphereGeometry args={[1, 64, 64]} />
