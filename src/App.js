@@ -13,7 +13,7 @@ export default function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/commands" element={<EmeraldBotCommands />} />
           <Route path="/floatcommands" element={<FloatCommands />} />
           <Route path="/gatedaccess" element={<AccessCommands />} />

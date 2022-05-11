@@ -2,6 +2,7 @@ import React, {Suspense, useRef, useCallback} from "react";
   
 import Navbar from "../components/Navbar";
 import Card2d from "../components/Card2d";
+import FooterComponent from "../components/FooterComponent2d";
 
 import styled from "styled-components"
 
@@ -29,6 +30,7 @@ import infos from "../data/CommandsInfos.json"
                 )
               })}
             </CardsWrapper>
+            <FooterComponent />
           </Wrapper>
     );
   }
