@@ -14,7 +14,7 @@
             },
             {
                 "command": "/resolve",
-                "commandDescription": "Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all the roles they have in your Discord.",
+                "commandDescription": "Allows you to input an address, .find, or .fn name and get information about the other two as well as their Discord username and all their roles.",
                 "param1": "1- A Blocto wallet address, a .find name, or a .fn name.",
                 "param2": "",
                 "param3": "",

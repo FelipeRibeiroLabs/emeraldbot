@@ -2,9 +2,20 @@ import React from "react";
 import { Box } from "@react-three/flex";
 import CardModel from "./CardModel";
 import Text from "./Text";
+import * as THREE from "three";
 
 export default function CardsComponent({ viewport, cardTexture, commands }) {
   console.log("commands", commands);
+
+  const bottleMaterial = new THREE.MeshPhysicalMaterial({
+    color: "#574E4E",
+    transmission: 1,
+    roughness: 0.35,
+    thickness: 500,
+    envMapIntensity: 4,
+  });
+
+  const mobile = viewport.width < 5;
 
   function handleCardsRotation(size, i) {
     let yRotation;
@@ -21,21 +32,21 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
         isLateral = size === "L" && true;
         break;
       case 2:
-        if(size === "L") yRotation = -0.2
-        if(size === "M") yRotation = 0.2
-        if(size === "S") yRotation = 0
+        if (size === "L") yRotation = -0.2;
+        if (size === "M") yRotation = 0.2;
+        if (size === "S") yRotation = 0;
         isLateral = true;
         break;
       case 3:
-        if(size === "L") yRotation = 0.2
-        if(size === "M") yRotation = -0.2
-        if(size === "S") yRotation = 0  
+        if (size === "L") yRotation = 0.2;
+        if (size === "M") yRotation = -0.2;
+        if (size === "S") yRotation = 0;
         isLateral = true;
         break;
       case 4:
-        if(size === "L") yRotation = 0
-        if(size === "M") yRotation = 0.2
-        if(size === "S") yRotation = 0  
+        if (size === "L") yRotation = 0;
+        if (size === "M") yRotation = 0.2;
+        if (size === "S") yRotation = 0;
         isLateral = size === "L" && true;
         break;
       case 5:
@@ -79,7 +90,7 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
           res = handleCardsRotation("S", i);
         }
 
-        console.log("res", res)
+        console.log("res", res);
         const isLateral = res.isLateral;
         const yRotation = res.yRotation;
 
@@ -93,51 +104,51 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
             key={i}
           >
             {/* <group> */}
-              <mesh rotation={[0, yRotation, 0]} position={[0.5, -0.5, 0]}>
-                <planeBufferGeometry args={[1, 1.4]} />
-                <meshBasicMaterial
-                  map={cardTexture}
-                  opacity={0.46}
-                  transparent
-                />
-              </mesh>
-              <Box height={0.1} flexDirection="column" padding={0}>
+            <mesh
+              rotation={[0, yRotation, 0]}
+              position={[0.5, -0.5, 0]}
+              material={mobile ? bottleMaterial : ""}
+            >
+              <planeBufferGeometry args={[1, 1.4]} />
+              <meshBasicMaterial map={cardTexture} opacity={0.46} transparent />
+            </mesh>
+            <Box height={0.1} flexDirection="column" padding={0}>
+              <Text
+                bold={true}
+                yRot={yRotation}
+                fontSize={0.08}
+                letterSpacing={0.05}
+                textAlign="center"
+              >
+                {command.command}
+              </Text>
+            </Box>
+            {/* <Box flexDirection="column" padding={0.1}> */}
+            <Box marginTop={0.1} height={0.5}>
+              <Text
+                maxWidth={0.6}
+                yRot={yRotation}
+                fontSize={0.05}
+                letterSpacing={0.1}
+                textAlign="center"
+              >
+                {command.commandDescription}
+              </Text>
+              {/* </Box> */}
+            </Box>
+            <Box height={0.2} flexDirection="column" padding={0.1}>
+              <Box>
                 <Text
-                  bold={true}
                   yRot={yRotation}
                   fontSize={0.08}
-                  letterSpacing={0.05}
-                  textAlign="center"
-                >
-                  {command.command}
-                </Text>
-              </Box>
-              {/* <Box flexDirection="column" padding={0.1}> */}
-              <Box marginTop={0.1} height={0.5}>
-                <Text
-                  maxWidth={0.6}
-                  yRot={yRotation}
-                  fontSize={0.05}
                   letterSpacing={0.1}
                   textAlign="center"
+                  secondary
                 >
-                  {command.commandDescription}
+                  SEE EXAMPLE
                 </Text>
-                {/* </Box> */}
               </Box>
-              <Box height={0.2} flexDirection="column" padding={0.1}>
-                <Box>
-                  <Text
-                    yRot={yRotation}
-                    fontSize={0.08}
-                    letterSpacing={0.1}
-                    textAlign="center"
-                    secondary
-                  >
-                    SEE EXAMPLE
-                  </Text>
-                </Box>
-              </Box>
+            </Box>
             {/* </group> */}
           </Box>
         );

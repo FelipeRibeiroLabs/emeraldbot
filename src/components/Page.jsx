@@ -38,7 +38,7 @@ export default function Page({ onChangePages, state }) {
 
       if (vw < 5) {
         console.log("s");
-        onChangePages(h / vpHeight / 2.35);
+        onChangePages(h / vpHeight / 2.1);
       } else if (vw > 5 && vw < 6) {
         console.log("m");
         onChangePages(h / vpHeight / 2.15);

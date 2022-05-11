@@ -61,15 +61,31 @@ function Overlay() {
             <div>
               <a
                 style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                href="https://discord.com/invite/emeraldcity"
+                href="http://localhost:3000/commands"
               >
-                COMMANDS
+                MAIN COMMANDS
               </a>
             </div>
             <div>
               <a
                 style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                href="https://discord.com/invite/emeraldcity"
+                href="http://localhost:3000/floatcommands"
+              >
+                FLOAT COMMANDS
+              </a>
+            </div>
+            <div>
+              <a
+                style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
+                href="http://localhost:3000/gatedaccess"
+              >
+                ACCESS COMMANDS
+              </a>
+            </div>
+            <div>
+              <a
+                style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
+                href="http://localhost:3000/"
               >
                 DOCS
               </a>

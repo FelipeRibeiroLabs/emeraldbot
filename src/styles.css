@@ -196,11 +196,11 @@ h3 {
   color: rgba(240, 248, 255, 0.798);
 }
 
-a {
+/* a {
   pointer-events: all;
   color: black;
   text-decoration: none;
-}
+} */
 
 p {
   color: rgba(240, 248, 255, 0.9);
@@ -285,3 +285,78 @@ nav {
   font-size: 0.6em;
 }
 
+button {
+background: transparent;
+font-family: var(--font-accent) ;
+color: #00F5D0;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+button:hover {
+background: #00F5D0;
+color: black
+}
+
+
+.dropdown {
+  font-size: 18px;
+  font-family: var(--font-accent) ;
+  width: 7rem;
+  background-color: transparent;
+  color: #00F5D0;
+}
+
+.dropdown-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-body {
+  padding: 5px;
+  border-top: 1px solid #00F5D0;
+  display: none;
+  background-color: #171717;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.dropdown-body.open {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #00F5D0;
+  text-decoration: none;
+}
+
+.dropdown-item {
+  padding: 10px 3px;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+.dropdown-item-dot {
+  opacity: 0;
+  color: #91A5BE;
+  transition: all .2s ease-in-out;
+}
+
+.dropdown-item-dot.selected {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 13px;
+  color: #91A5BE;
+  transform: rotate(0deg);
+  transition: all .2s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(90deg);
+}

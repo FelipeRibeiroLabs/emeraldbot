@@ -51,7 +51,7 @@ export default function HeroComponent({ vpWidth }) {
               textAlign="left"
               marginTop={1}
             >
-              BOT{" "}
+              BOT
             </Text>
           </Box>
 
@@ -61,15 +61,17 @@ export default function HeroComponent({ vpWidth }) {
                 textAlign: "center",
                 width: vpWidth > 5 ? "24vw" : "36vw",
                 // height: vpWidth > 5 ? "6vw" : "8vw",
-                background: "transparent",
+                // background: "transparent",
                 border: "3px solid #00F5D0",
                 borderRadius: "12px",
                 marginTop,
+                cursor: "pointer",
+                fontSize: vpWidth > 5 ? "2em" : "1em"
               }}
             >
-              <h2 style={{ fontSize: vpWidth > 5 ? "2em" : "1em" }}>
+              {/* <span style={{  }}> */}
                 START BUILDING
-              </h2>
+              {/* </span> */}
             </button>
           </Html>
         </Box>
