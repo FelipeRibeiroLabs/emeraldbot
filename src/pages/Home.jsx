@@ -8,7 +8,7 @@ import React, {
   import state from "../state";
   import Page from "../components/Page";
   
-  import {Loader} from "@react-three/drei";
+  import {Loader, Preload} from "@react-three/drei";
 import Navbar from "../components/Navbar";
   
   
@@ -42,6 +42,7 @@ import Navbar from "../components/Navbar";
           <div style={{ height: `${pages * 100}vh` }} />
         </div>
         <Loader />
+
       </>
     );
   }

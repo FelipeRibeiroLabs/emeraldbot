@@ -19,7 +19,7 @@ export default function Model(props) {
 
   // This hook gives you offets, ranges and other useful things
   const scroll = useScroll();
-  const { scene, nodes, animations, materials } = useGLTF("/emerald.glb");
+  const { scene, nodes, animations, materials } = useGLTF("https://res.cloudinary.com/do4mactw0/image/upload/v1652310343/emerald_pjxl4h.glb");
   const { actions } = useAnimations(animations, scene);
 
   useFrame((state, delta) => {
