@@ -1,7 +1,6 @@
 import React from "react";
-import { Flex, Box, useReflow } from "@react-three/flex";
+import { Box } from "@react-three/flex";
 import Text from "./Text";
-import { Composition } from "./Composition";
 import * as THREE from "three";
 
 export default function DescriptionComponent({ vpWidth }) {
@@ -27,7 +26,7 @@ export default function DescriptionComponent({ vpWidth }) {
       >
         <mesh
           rotation={[0, 0, 0]}
-          position={[0.7, desktop ? -0.6 : - 1.2, 0]}
+          position={[0.7, desktop ? -0.6 : -1.2, 0]}
           material={bottleMaterial}
         >
           <planeBufferGeometry args={[9, desktop ? 2 : 3.4]} />
