@@ -1,6 +1,5 @@
 import React from "react";
 import { Box } from "@react-three/flex";
-import CardModel from "./CardModel";
 import Text from "./Text";
 import * as THREE from "three";
 

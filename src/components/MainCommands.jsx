@@ -1,7 +1,6 @@
 import React from "react";
-import { Flex, Box, useReflow } from "@react-three/flex";
+import {  Box } from "@react-three/flex";
 import Text from "./Text";
-import CardModel from "./CardModel";
 import CardsComponent from "./CardsComponent";
 import infos from "../data/CommandsInfos.json"
 
