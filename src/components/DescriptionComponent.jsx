@@ -27,7 +27,7 @@ export default function DescriptionComponent({ vpWidth }) {
       >
         <mesh
           rotation={[0, 0, 0]}
-          position={[0.7, desktop ? -0.6 : - 1.2, 0]}
+          position={[0.7, desktop ? -0.6 : -1.2, 0]}
           material={bottleMaterial}
         >
           <planeBufferGeometry args={[9, desktop ? 2 : 3.4]} />
@@ -40,7 +40,7 @@ export default function DescriptionComponent({ vpWidth }) {
             maxWidth={vpWidth * 0.8}
             textAlign="center"
           >
-            Keep going down
+            Brief description
           </Text>
         </Box>
         <Box margin={0.1}>
@@ -50,7 +50,7 @@ export default function DescriptionComponent({ vpWidth }) {
             maxWidth={vpWidth * 0.8}
             textAlign="center"
           >
-            and discover all the features!
+            of our beloved bot
           </Text>
         </Box>
       </Box>
