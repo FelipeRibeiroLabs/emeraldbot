@@ -5,7 +5,6 @@ import { RoundedBox, Html } from "@react-three/drei";
 
 export default function HeroComponent({ vpWidth }) {
 
-  console.log("vpWidth2", vpWidth)
   const subtitleStyle = {
     width: "100px",
     borderRadius: "20px",

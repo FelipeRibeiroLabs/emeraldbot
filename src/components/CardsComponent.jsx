@@ -5,7 +5,6 @@ import Text from "./Text";
 import * as THREE from "three";
 
 export default function CardsComponent({ viewport, cardTexture, commands }) {
-  console.log("commands", commands);
 
   const bottleMaterial = new THREE.MeshPhysicalMaterial({
     color: "#574E4E",
@@ -75,7 +74,6 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
         // let yRotation = 0;
         // let isLateral = false;
 
-        // console.log("vw", viewport.width);
         const vpWidth = viewport.width;
         let res;
 
@@ -90,7 +88,6 @@ export default function CardsComponent({ viewport, cardTexture, commands }) {
           res = handleCardsRotation("S", i);
         }
 
-        console.log("res", res);
         const isLateral = res.isLateral;
         const yRotation = res.yRotation;
 

@@ -33,17 +33,13 @@ export default function Page({ onChangePages, state }) {
   // handles the height of the whole page
   const handleReflow = useCallback(
     (w, h) => {
-      console.log("vpWidth", viewport.width);
       const vw = viewport.width;
 
       if (vw < 5) {
-        console.log("s");
         onChangePages(h / vpHeight / 2.1);
       } else if (vw > 5 && vw < 6) {
-        console.log("m");
         onChangePages(h / vpHeight / 2.15);
       } else {
-        console.log("l");
         onChangePages(h / vpHeight / 1.8);
       }
     },

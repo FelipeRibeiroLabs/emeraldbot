@@ -8,7 +8,6 @@ import infos from "../data/CommandsInfos.json"
 export default function FloatCommands({ vpWidth, viewport, cardTexture }) {
 
   const commands = infos[1].floatCommands
-  console.log("commands1", commands)
 
     const cardProps ={viewport, cardTexture , commands}
 
