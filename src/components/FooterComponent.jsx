@@ -3,6 +3,7 @@ import { Flex, Box, useReflow } from "@react-three/flex";
 import { Html } from "@react-three/drei";
 import Text from "./Text";
 import * as THREE from "three";
+import Subtitle from "./Subtitle";
 
 export default function FooterComponent({ vpWidth }) {
   const bottleMaterial = new THREE.MeshPhysicalMaterial({
@@ -13,6 +14,7 @@ export default function FooterComponent({ vpWidth }) {
     envMapIntensity: 4,
   });
   const desktop = vpWidth > 5;
+
 
   return (
     <group position-z={0.4}>
@@ -34,7 +36,8 @@ export default function FooterComponent({ vpWidth }) {
         </mesh>
         <Box margin={0.1}>
           <Text
-            fontSize={0.2}
+            fontSize={desktop ? 0.2 : 0.1}
+            bold
             letterSpacing={0.1}
             maxWidth={vpWidth * 0.8}
             textAlign="center"
@@ -42,24 +45,16 @@ export default function FooterComponent({ vpWidth }) {
             Emerald City
           </Text>
         </Box>
-        <Box margin={0.1}>
-          <Text
-            fontSize={0.1}
-            letterSpacing={0.1}
-            maxWidth={vpWidth * 0.8}
-            textAlign="center"
-          >
-            We are the first DAO on the Flow Blockchain
-          </Text>
-        </Box>
+        <Subtitle desktop={desktop} vpWidth={vpWidth} />
+
         <Box margin={0}>
           <Text
-            fontSize={0.1}
+            fontSize={desktop ? 0.1 : 0.05}
             letterSpacing={0.1}
             maxWidth={vpWidth * 0.8}
             textAlign="center"
           >
-            Educate, Build and Govern{" "}
+            Educate, Build and Govern
           </Text>
         </Box>
         <Box
