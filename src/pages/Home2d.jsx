@@ -2,7 +2,6 @@ import React, { Suspense, useRef, useCallback } from "react";
 import FooterComponent from "../components/FooterComponent2d";
 import { useNavigate } from "react-router-dom";
 
-
 import styled from "styled-components";
 import HeroComponent2 from "../components/HeroComponent2";
 import MainFeatures from "../components/MainFeatures";
@@ -16,12 +15,9 @@ export default function Home2d({ onChangePages, state, url }) {
 
   return (
     <Wrapper>
-    
-          <HeroComponent2 url={url} />
-          <MainFeatures handleNav={handleNav} />
-          <FooterComponent />
-      
-    
+      <HeroComponent2 url={url} />
+      <MainFeatures handleNav={handleNav} />
+      <FooterComponent />
     </Wrapper>
   );
 }
@@ -35,6 +31,7 @@ const Wrapper = styled.section`
     flex-direction: row-reverse;
     justify-content: center;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .textDiv {
@@ -52,7 +49,7 @@ const Wrapper = styled.section`
     width: 100%;
     padding: 2rem 50px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
 
     & h2 {
       font-size: 3rem;
