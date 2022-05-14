@@ -4,7 +4,7 @@ export default function HeroComponent2() {
   return (
 <div className="divBox" >
         <div className="imageDiv">
-          <img src="emerald-bot.png" alt="" />
+          <img src="https://res.cloudinary.com/do4mactw0/image/upload/v1652537880/emerald-bot_c8qn1d.png" alt="bot" />
         </div>
 
         <div className="textDiv">
