@@ -14,7 +14,6 @@ import FooterComponent from "../components/FooterComponent2d";
 
     return (
           <Wrapper>
-            <Navbar />
             <h1>Float Commands</h1>
             <CardsWrapper>
 

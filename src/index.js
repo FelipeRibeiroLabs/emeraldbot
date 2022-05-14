@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import Navbar from "./components/Navbar";
 import "./styles.css";
@@ -18,7 +19,8 @@ function Overlay() {
   return (
     <>
       
-      {width < 500 && (
+      {
+      width < 500 ? (
         <>
           <header
             style={{
@@ -81,7 +83,9 @@ function Overlay() {
             </div>
           </Drawer>
         </>
-      )}
+      ) :
+      <Navbar />
+    }
     </>
   );
 }
@@ -89,9 +93,9 @@ function Overlay() {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <>
+    <BrowserRouter>
       <App />
       <Overlay />
-    </>
+    </BrowserRouter>
   </React.StrictMode>
 );

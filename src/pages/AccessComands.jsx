@@ -14,7 +14,6 @@ import infos from "../data/CommandsInfos.json"
 
     return (
           <Wrapper>
-            <Navbar />
             <h1>Emerald Bot Commands</h1>
             <CardsWrapper>
 
