@@ -2,15 +2,12 @@ import React, { Suspense, useRef, useCallback } from "react";
 import FooterComponent from "../components/FooterComponent2d";
 import { useNavigate } from "react-router-dom";
 
-import { useOnLoadImages } from "../hooks/useOnLoadImages";
 
 import styled from "styled-components";
 import HeroComponent2 from "../components/HeroComponent2";
 import MainFeatures from "../components/MainFeatures";
 
-export default function Home2d({ onChangePages, state }) {
-  const wrapperRef = useRef(null);
-  const imagesLoaded = useOnLoadImages(wrapperRef);
+export default function Home2d({ onChangePages, state, url }) {
   let navigate = useNavigate();
 
   const handleNav = (route) => {
@@ -19,9 +16,12 @@ export default function Home2d({ onChangePages, state }) {
 
   return (
     <Wrapper>
-      <HeroComponent2 />
-      <MainFeatures handleNav={handleNav} />
-      <FooterComponent />
+    
+          <HeroComponent2 url={url} />
+          <MainFeatures handleNav={handleNav} />
+          <FooterComponent />
+      
+    
     </Wrapper>
   );
 }

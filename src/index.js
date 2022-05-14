@@ -7,6 +7,10 @@ import "./styles.css";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { FiMenu } from "react-icons/fi";
+import useImage from 'use-image';
+
+const url = "https://res.cloudinary.com/do4mactw0/image/upload/v1652537880/emerald-bot_c8qn1d.png";
+
 
 function Overlay() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -94,7 +98,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <App url />
       <Overlay />
     </BrowserRouter>
   </React.StrictMode>

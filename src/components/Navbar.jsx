@@ -46,6 +46,7 @@ export default function Navbar({ vpWidth }) {
             <div className={`dropdown-body ${isOpen && "open"}`}>
               {items.map((item) => (
                 <Link
+                  key={item.id}
                   to={item.url}
                   className="dropdown-item"
                   onClick={(e) => handleItemClick(e.target.id)}
@@ -68,7 +69,7 @@ export default function Navbar({ vpWidth }) {
         </li>
         <li>
           <a
-            class="nav-link"
+            className="nav-link"
             href="https://discord.com/invite/emeraldcity"
             target="_blank"
           >
