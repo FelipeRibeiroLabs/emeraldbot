@@ -70,6 +70,5 @@ const FooterWrapper = styled.div`
     align-self: center;
     padding: 1rem;
     border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.9);
   }
 `;

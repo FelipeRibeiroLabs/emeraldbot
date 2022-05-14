@@ -2,15 +2,15 @@ import React, {Suspense, useRef, useCallback} from "react";
   
 import Navbar from "../components/Navbar";
 import Card2d from "../components/Card2d";
-import FooterComponent from "../components/FooterComponent2d";
 
 import styled from "styled-components"
 
 import infos from "../data/CommandsInfos.json"
+import FooterComponent from "../components/FooterComponent2d";
   
-  export default function EmeraldBotCommands({ onChangePages, state }) {
+  export default function DisplayCommands({ onChangePages, state }) {
 
-    const commands = infos[0].emeraldBotCommands
+    const commands = infos[1].floatCommands
 
     return (
           <Wrapper>
@@ -41,6 +41,7 @@ const Wrapper = styled.section`
     text-align: center;
     letter-spacing: 0;
     font-size: 2.5rem;
+    
     color: white;
   }
 `

@@ -8,9 +8,9 @@ import styled from "styled-components"
 
 import infos from "../data/CommandsInfos.json"
   
-  export default function AccessCommands({ onChangePages, state }) {
+  export default function GeneralCommands({ onChangePages, state }) {
 
-    const commands = infos[2].gatedAccess
+    const commands = infos[0].emeraldBotCommands
 
     return (
           <Wrapper>

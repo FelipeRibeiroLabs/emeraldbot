@@ -6,18 +6,18 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home'
 import Home2d from './pages/Home2d'
-import FloatCommands from './pages/FloatsCommands';
-import EmeraldBotCommands from './pages/EmeraldBotCommands';
-import AccessCommands from './pages/AccessComands';
+import DisplayCommands from './pages/DisplayCommands';
+import GeneralCommands from './pages/GeneralCommands';
+import AccessCommands from './pages/AccessCommands';
 
 export default function App() {
   return (
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<Home2d />} />
-          <Route path="/commands" element={<EmeraldBotCommands />} />
-          <Route path="/floatcommands" element={<FloatCommands />} />
-          <Route path="/gatedaccess" element={<AccessCommands />} />
+          <Route path="/display" element={<DisplayCommands />} />
+          <Route path="/access" element={<AccessCommands />} />
+          <Route path="/general" element={<GeneralCommands />} />
         </Routes>
   )
 }

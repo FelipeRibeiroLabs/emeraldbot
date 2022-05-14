@@ -1,10 +1,18 @@
 import React, { Suspense, useRef, useCallback } from "react";
 import { FaDiscord, FaDoorOpen, FaToolbox } from "react-icons/fa";
 import FooterComponent from "../components/FooterComponent2d";
+import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 
-export default function AccessCommands({ onChangePages, state }) {
+export default function Home2d({ onChangePages, state }) {
+  let navigate = useNavigate();
+
+  const handleNav = (route ) => {
+    
+    navigate(`/${route}`);
+  };
+
   return (
     <Wrapper>
       <div className="divBox">
@@ -44,7 +52,7 @@ export default function AccessCommands({ onChangePages, state }) {
             </div>
           </div>
         </div>
-        <button>SEE COMMANDS</button>
+        <button onClick={() => handleNav("display")}>SEE COMMANDS</button>
       </div>
 
       <div className="displayDiv2">
@@ -62,7 +70,7 @@ export default function AccessCommands({ onChangePages, state }) {
             <p>Token-gated Channels</p>
           </div>
         </div>
-        <button>SEE COMMANDS</button>
+        <button onClick={() => handleNav("access")}>SEE COMMANDS</button>
       </div>
 
       <div className="displayDiv2">
@@ -74,7 +82,7 @@ export default function AccessCommands({ onChangePages, state }) {
         </div>
         <p>Here we will the description of the features</p>
         <span></span>
-        <button>SEE COMMANDS</button>
+        <button onClick={() => handleNav("general")}>SEE COMMANDS</button>
       </div>
 
       <FooterComponent />
@@ -90,7 +98,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    height:100vh
+    height: 100vh;
   }
 
   .textDiv {
@@ -162,7 +170,7 @@ const Wrapper = styled.section`
       margin-right: 5rem;
       padding: 1rem;
       border-radius: 1rem;
-      background-color: rgba(0, 0, 0, 0.9);
+      // background-color: rgba(0, 0, 0, 0.9);
     }
   }
 
@@ -212,7 +220,6 @@ const Wrapper = styled.section`
       align-self: center;
       padding: 1rem;
       border-radius: 1rem;
-      background-color: rgba(0, 0, 0, 0.9);
     }
   }
 

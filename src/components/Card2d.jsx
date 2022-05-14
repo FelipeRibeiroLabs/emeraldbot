@@ -1,35 +1,36 @@
-import React, {Suspense, useRef, useCallback} from "react";
+import React, { Suspense, useRef, useCallback } from "react";
 
-import styled from "styled-components"
-  
-  export default function EmeraldBotCommands({ title, description, imgLink, gifLink }) {
+import styled from "styled-components";
 
-    return (
-            <Style>
-            {
-            gifLink ? <Gif image={gifLink} /> : 
-            
-            (
-                <Image> 
-                    <img src={imgLink} alt="" />
-                </Image>
-            )
-            }
-              <Content>
-              <Title>{title}</Title>
-              <Description>{description}</Description>
-              <BottomBar />
-                </Content>
-            </Style>
-    );
-  }
-
+export default function EmeraldBotCommands({
+  title,
+  description,
+  imgLink,
+  gifLink,
+}) {
+  return (
+    <Style>
+      {gifLink ? (
+        <Gif image={gifLink} />
+      ) : (
+        <Image>
+          <img src={imgLink} alt="" />
+        </Image>
+      )}
+      <Content>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <BottomBar />
+      </Content>
+    </Style>
+  );
+}
 
 const cardWidth = 650;
 const borderRadius = 15;
-const transition = 'all 0.45s ease';
+const transition = "all 0.45s ease";
 
-  const Image = styled.div`
+const Image = styled.div`
     z-index: 200;
     position: relative;
     margin: 0;
@@ -67,23 +68,23 @@ const transition = 'all 0.45s ease';
     img{
         width: 100%;
     }
-  `
+  `;
 
-  const Gif = styled.figure`
-    z-index: 200;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: ${cardWidth}px;
-    height: 350px;
-    background: url(${(props) => props.image}) 0 0 no-repeat;
-    background-size: cover;
-    border-radius: ${borderRadius}px ${borderRadius}px 0 0;
-    overflow: hidden;
-    backface-visibility: hidden;
-   
-    &::before {
-    content: '';
+const Gif = styled.figure`
+  z-index: 200;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: ${cardWidth}px;
+  height: 350px;
+  background: url(${(props) => props.image}) 0 0 no-repeat;
+  background-size: cover;
+  border-radius: ${borderRadius}px ${borderRadius}px 0 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+
+  &::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -91,19 +92,19 @@ const transition = 'all 0.45s ease';
     bottom: 0;
     background: rgba(0, 0, 0, 0);
     transition: ${transition};
-    }
-    @media screen and (max-width: 800px) {
-        width: 100%;
-        background-position-x: center;
-        background-position-y: bottom;
-    }
-    @media screen and (max-width: 600px) {
-        width: 100%;
-        height: 220px;
-    }
-  `
-  
-  const Content = styled.div`
+  }
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    height: 220px;
+  }
+`;
+
+const Content = styled.div`
   z-index: 200;
   position: relative;
   padding: 20px 20px 30px;
@@ -118,7 +119,7 @@ const Title = styled.span`
   transition: ${transition};
 `;
 
-  const BottomBar = styled.span`
+const BottomBar = styled.span`
   position: absolute;
   left: 0;
   bottom: 0;
@@ -137,7 +138,7 @@ const Description = styled.span`
   transition-delay: 0.04s;
 `;
 
- const Style = styled.div`
+const Style = styled.div`
     margin: 50px 0;
     position: relative;
     text-align: center;
@@ -179,4 +180,4 @@ const Description = styled.span`
     @media screen and (max-width: 600px) {
         width: 90%;
     }
-  `
+  `;
