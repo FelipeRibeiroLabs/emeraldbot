@@ -141,6 +141,11 @@ body,
   /* background: #1D2741; */
   background-color: #11191f;
   /* background-image: url('/public/bg.png'); */
+  background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed
 
 }
 
@@ -150,10 +155,7 @@ body {
   font-family: 'Poppins', sans-serif;
   cursor: url('https://res.cloudinary.com/do4mactw0/image/upload/v1651689709/cursor_ctwznw.svg'),
     auto;
-  /* background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
-  background-size: fill;
-  background-repeat: no-repeat;
-  background-position: top; */
+ 
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
@@ -165,6 +167,7 @@ canvas {
 
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
+  
 }
 
 h1 {
@@ -180,22 +183,30 @@ h1 {
 }
 
 h2 {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 2em;
+  /* font-family: 'JetBrains Mono', monospace; */
+  font-size: 4em;
   font-weight: 600;
   /* line-height:4.2rem; */
   padding: 0;
-  color: #00F5D0
+  color: #fff
 }
+
 
 h3 {
   font-size: 4em;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.05em;
   line-height:4.2rem;
   margin-left: 2rem;
   padding: 0;
   color: rgba(240, 248, 255, 0.798);
+}
+
+.icon{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 20px;
 }
 
 /* a {
@@ -216,6 +227,11 @@ p {
 .card-left {
   width: 24vw;
   background-color: black;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
 }
 
 /* NAV */
@@ -240,9 +256,7 @@ nav {
   width: 100vw;
   flex-direction: inherit;
   justify-content: space-between;
-  padding-left: 4.2rem;
-  padding-top: 0.8rem;
-  padding-right: 8.2rem;
+  padding: 0.8rem 8.2rem;
   list-style-type: none;
   gap: 20px;
   background: transparent;

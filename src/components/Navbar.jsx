@@ -21,7 +21,9 @@ export default function Navbar({ vpWidth }) {
 
   return (
       <nav>
-        <div></div>
+        <div>
+          <img alt="logo" style={{height:"20%"}} src="https://res.cloudinary.com/do4mactw0/image/upload/v1652506930/emerald-bot-logo_szzd8y.png" />
+        </div>
         <main style={{ display: "flex" }}>
           <li>
             <div className="dropdown">
