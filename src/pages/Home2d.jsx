@@ -1,90 +1,26 @@
 import React, { Suspense, useRef, useCallback } from "react";
-import { FaDiscord, FaDoorOpen, FaToolbox } from "react-icons/fa";
 import FooterComponent from "../components/FooterComponent2d";
 import { useNavigate } from "react-router-dom";
 
+import { useOnLoadImages } from "../hooks/useOnLoadImages";
+
 import styled from "styled-components";
+import HeroComponent2 from "../components/HeroComponent2";
+import MainFeatures from "../components/MainFeatures";
 
 export default function Home2d({ onChangePages, state }) {
+  const wrapperRef = useRef(null);
+  const imagesLoaded = useOnLoadImages(wrapperRef);
   let navigate = useNavigate();
 
-  const handleNav = (route ) => {
-    
+  const handleNav = (route) => {
     navigate(`/${route}`);
   };
 
   return (
     <Wrapper>
-      <div className="divBox">
-        <div className="imageDiv">
-          <img src="emerald-bot.png" alt="" />
-        </div>
-
-        <div className="textDiv">
-          <h1>EMERALD BOT</h1>
-          <p>
-            A Discord bot created by your best friends at <a>Emerald City </a>
-            that allows you to distribute roles, gate access to channels based
-            on token holdings and more.
-          </p>
-        </div>
-      </div>
-
-      <div className="sectionTxt">
-        <h2>MAIN FEATURES</h2>
-      </div>
-
-      <div className="displayDiv2">
-        <div>
-          <div className="card-title">
-            <h3>Display NFTs in Discord</h3>
-            <div className="icon">
-              <FaDiscord size={26} color={"#11F6D4"} />
-            </div>
-          </div>
-          {/* <p>Like Floats for now but more to come</p> */}
-          {/* <span> (NBATS, Flunks, GENIACE, and more soon)</span> */}
-          {/* <img src="float.png" alt="" className="float" /> */}
-          {/* <img src="flunks.webp" alt="" className="flunks"/> */}
-          <div className="subDiv">
-            <div>
-              <p>Here we will the description of the features</p>
-            </div>
-          </div>
-        </div>
-        <button onClick={() => handleNav("display")}>SEE COMMANDS</button>
-      </div>
-
-      <div className="displayDiv2">
-        <div className="card-title">
-          <h3>Gated Access</h3>
-          <div className="icon">
-            <FaDoorOpen size={26} color={"#11F6D4"} />
-          </div>
-        </div>
-        <div className="subDiv">
-          <div>
-            <p>Role based Channels</p>
-          </div>
-          <div>
-            <p>Token-gated Channels</p>
-          </div>
-        </div>
-        <button onClick={() => handleNav("access")}>SEE COMMANDS</button>
-      </div>
-
-      <div className="displayDiv2">
-        <div className="card-title">
-          <h3>General Utilities</h3>
-          <div className="icon">
-            <FaToolbox size={26} color={"#11F6D4"} />
-          </div>
-        </div>
-        <p>Here we will the description of the features</p>
-        <span></span>
-        <button onClick={() => handleNav("general")}>SEE COMMANDS</button>
-      </div>
-
+      <HeroComponent2 />
+      <MainFeatures handleNav={handleNav} />
       <FooterComponent />
     </Wrapper>
   );
