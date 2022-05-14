@@ -48,7 +48,7 @@ const transition = 'all 0.45s ease';
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0);
+     background: rgba(0, 0, 0, 0);
     transition: ${transition};
     }
     @media screen and (max-width: 800px) {
@@ -114,6 +114,7 @@ const Title = styled.span`
   margin-bottom: 4px;
   font-size: 1.25em;
   font-weight: 500;
+  color: var(--primary);
   transition: ${transition};
 `;
 
@@ -131,7 +132,7 @@ const Title = styled.span`
 const Description = styled.span`
   display: block;
   font-size: 0.875em;
-  color: #999999;
+  color: #fff;
   transition: ${transition};
   transition-delay: 0.04s;
 `;
@@ -142,7 +143,7 @@ const Description = styled.span`
     text-align: center;
     flex-shrink: 0;
     width: ${cardWidth}px;
-    background: #ffffff;
+    background: rgba(0,0,0,0.5);
     border-radius: ${borderRadius}px;
     cursor: pointer;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12), 0 20px 20px -10px rgba(0, 0, 0, 0.125);

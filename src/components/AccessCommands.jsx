@@ -29,7 +29,7 @@ export default function AccessCommands({ vpWidth, viewport, cardTexture }) {
               maxWidth={vpWidth * 0.8}
               textAlign="center"
             >
-              Access Commands
+              General Commands
             </Text>
           </Box>
         </Box>

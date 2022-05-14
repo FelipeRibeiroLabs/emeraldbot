@@ -14,7 +14,7 @@ import FooterComponent from "../components/FooterComponent2d";
 
     return (
           <Wrapper>
-            <h1>Float Commands</h1>
+            <h1>Access</h1>
             <CardsWrapper>
 
               {commands.map((c) => {
@@ -41,6 +41,7 @@ const Wrapper = styled.section`
     text-align: center;
     letter-spacing: 0;
     font-size: 2.5rem;
+    
     color: white;
   }
 `

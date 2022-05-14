@@ -3,9 +3,9 @@ import { FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const data = [
-  { id: 0, label: "MAIN", url: "/commands" },
-  { id: 1, label: "FLOATS", url: "/floatcommands" },
-  { id: 2, label: "ACCESS", url: "/gatedaccess" },
+  { id: 0, label: "DISPLAY", url: "/commands" },
+  { id: 1, label: "ACCESS", url: "/floatcommands" },
+  { id: 2, label: "GENERAL", url: "/gatedaccess" },
 ];
 
 export default function Navbar({ vpWidth }) {

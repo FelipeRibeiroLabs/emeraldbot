@@ -14,7 +14,7 @@ import infos from "../data/CommandsInfos.json"
 
     return (
           <Wrapper>
-            <h1>Emerald Bot Commands</h1>
+            <h1>General</h1>
             <CardsWrapper>
 
               {commands.map((c) => {
