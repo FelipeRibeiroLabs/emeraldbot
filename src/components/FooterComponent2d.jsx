@@ -61,7 +61,6 @@ const FooterWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12rem;
     height: 100%;
   }
 
@@ -71,4 +70,48 @@ const FooterWrapper = styled.div`
     padding: 1rem;
     border-radius: 1rem;
   }
+
+  @media (max-width: 700px) {
+    & h2{
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    & span{
+      font-size: .9rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .footer-bar{
+      padding: 1rem 2rem;
+      flex-direction: column-reverse;
+      gap: 3px;
+    }
+    
+    & h2{
+      font-size: 3.5rem;
+    }
+
+    & span{
+      font-size: .9rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+
+    .footer-bar{
+      padding: 1rem 1rem;
+    }
+
+    & h2{
+      font-size: 2.5rem;
+    }
+
+    /* & p {
+      font-size: .8rem;
+  } */
+  }
 `;
+

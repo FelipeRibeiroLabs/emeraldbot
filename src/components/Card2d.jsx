@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useCallback } from "react";
+import React from "react";
 
 import styled from "styled-components";
 
@@ -37,7 +37,6 @@ const Image = styled.div`
     padding: 0;
     width: ${cardWidth}px;
     height: 133px;
-    /* background: url(${(props) => props.image}) 0 0 no-repeat; */
     background-size: cover;
     overflow: hidden;
     backface-visibility: hidden;

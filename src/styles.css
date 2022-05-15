@@ -467,7 +467,8 @@ cursor:pointer;
 }
 button:hover {
 background: #00F5D0;
-color: black
+color: black;
+transition: ease-in-out .3s;
 }
 
 .icon {

@@ -2,6 +2,9 @@ import React from 'react'
 import Navbar from "./Navbar";
 import Drawer from "react-modern-drawer";
 import { FiMenu } from "react-icons/fi";
+import { Link } from 'react-router-dom';
+
+import styled from 'styled-components';
 
 export default function Overlay() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -15,7 +18,7 @@ export default function Overlay() {
       <>
         
         {
-        width < 500 ? (
+        width < 800 ? (
           <>
             <header
               style={{
@@ -42,40 +45,46 @@ export default function Overlay() {
                 alignItems: "center",
                 width: "65%",
                 paddingTop: "2rem",
+                zIndex: "500"
               }}
             >
-              <div>
-                <a
-                  style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                  href="http://localhost:3000/commands"
+
+              <LinkWrapper>
+
+              <Link 
+              to={"/"}
+              className="imgBtn"
+              >
+                <img
+                  alt="logo"
+                  style={{ height: "65px" }}
+                  src="https://res.cloudinary.com/do4mactw0/image/upload/v1652506930/emerald-bot-logo_szzd8y.png"
+                />
+              </Link>
+
+                <Link 
+                to="/display"
                 >
-                  MAIN COMMANDS
-                </a>
-              </div>
-              <div>
+                  Display
+                </Link>
+
+                <Link to="/access">
+                  Access
+                </Link>
+
+                <Link to="/general">
+                  General
+                </Link>
+
                 <a
-                  style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                  href="http://localhost:3000/floatcommands"
+                href="https://discord.com/invite/emeraldcity"
+                target="_blank"
+                className='emeraldCityBtn'
                 >
-                  FLOAT COMMANDS
+                  Emerald City DAO
                 </a>
-              </div>
-              <div>
-                <a
-                  style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                  href="http://localhost:3000/gatedaccess"
-                >
-                  ACCESS COMMANDS
-                </a>
-              </div>
-              <div>
-                <a
-                  style={{ color: "#11F6D4", width: "100%", textAlign: "left" }}
-                  href="http://localhost:3000/"
-                >
-                  DOCS
-                </a>
-              </div>
+
+              </LinkWrapper>
             </Drawer>
           </>
         ) :
@@ -84,3 +93,39 @@ export default function Overlay() {
       </>
     );
   }
+
+const LinkWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+
+  a{
+    color: #11F6D4;
+    padding: 10px 20px;
+    width: 65%;
+    margin: auto;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:hover{
+    color: black;
+    background-color: rgba(240, 248, 255, 0.9);
+    cursor: pointer;
+    transition: ease-in-out .3s;
+  }
+
+  .imgBtn:hover{
+    background-color: transparent;
+    transform: scale(1.1);
+  }
+
+  .emeraldCityBtn{
+    margin-top: 30px;
+    background-color: #38e8c6;
+    color: black;
+    font-weight: 400;
+  }
+`

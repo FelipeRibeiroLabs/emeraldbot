@@ -16,6 +16,7 @@ export default function HeroComponent2({url}) {
               that allows you to distribute roles, gate access to channels based
               on token holdings and more.
             </p>
+            <button>Add to server</button>
           </div>
         </div>  
       </HeroWrapper>
@@ -29,11 +30,11 @@ const HeroWrapper = styled.section`
     max-width: 1200px;
     margin: auto;
     overflow: hidden;
-    padding: 8rem 7rem;
+    padding: 10rem 7rem;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
   }
 
   .textDiv {
@@ -44,13 +45,27 @@ const HeroWrapper = styled.section`
   .imageDiv {
     width: 50%;
     & img {
-      width: 550px;
-    }
+      width: 650px;
+      position: relative;
+      animation: mymove 5s ease-in-out infinite;
+    }    
+  }
+  @keyframes mymove {
+    0% {top: 0px;}
+    50% {top: 30px;}
+    100% {top: 0px;}
+  }
+
+  & button {
+    margin: 1rem;
+    align-self: center;
+    padding: 1rem;
+    border-radius: 1rem;
   }
 
   @media (max-width: 1000px) {
     .divBox{
-      padding: 8rem 3rem;
+      padding: 5rem 3rem;
     }
 
     .imageDiv{
@@ -61,22 +76,43 @@ const HeroWrapper = styled.section`
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
+    .imageDiv{
+      & img {
+      width: 550px;
+      }
+    }
+  }
+
+
+  @media (min-width: 1400px) {
+    .imageDiv{
+      width: 55%;
+      & img {
+      width: 710px;
+      }
+    }
+  }
+
+
+  @media (max-width: 900px) {
     .divBox{
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
+      height: 100%;
     }
 
     .imageDiv{
-      top: 180px;
+      top: 0px;
     }
 
     .textDiv{
       width: 100%;
       text-align: center;
-
+      
       & h1{
+        margin-top: 0px;
         width: 100%;
       }
     }
@@ -86,6 +122,7 @@ const HeroWrapper = styled.section`
     .textDiv{
       & h1{
         font-size: 5rem;
+        line-height: 5rem;
       }
     }
   }
@@ -94,6 +131,7 @@ const HeroWrapper = styled.section`
     .textDiv{
       & h1{
         font-size: 4rem;
+        line-height: 4rem;
       }
     }
 
@@ -104,5 +142,23 @@ const HeroWrapper = styled.section`
         width: 100%;
       }
     }
+  }
+
+  @media (max-width: 380px) {
+    .textDiv{
+      & h1{
+        font-size: 3rem;
+        line-height: 3rem;
+      }
+    }
+    
+    .imageDiv{
+      width: 350px;
+
+      & img{
+        width: 100%;
+      }
+    }
+
   }
 `

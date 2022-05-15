@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components'
 
 const data = [
-  { id: 0, label: "DISPLAY", url: "/display" },
-  { id: 1, label: "ACCESS", url: "/access" },
-  { id: 2, label: "GENERAL", url: "/general" },
+  { id: 0, label: "Display", url: "/display" },
+  { id: 1, label: "Access", url: "/access" },
+  { id: 2, label: "General", url: "/general" },
 ];
 
 export default function Navbar({ vpWidth }) {
@@ -39,7 +39,7 @@ export default function Navbar({ vpWidth }) {
           <li>
             <div className="dropdown">
               <div className="dropdown-header" onClick={toggleDropdown}>
-                COMMANDS
+                Commands
                 <FiChevronDown onClick={toggleDropdown} />
               </div>
 
@@ -64,16 +64,18 @@ export default function Navbar({ vpWidth }) {
               </div>
             </div>
           </li>
-          <li>
+
+          {/* <li>
             <a className="nav-link">DOCS</a>
-          </li>
+          </li> */}
+
           <li>
             <a
               className="nav-link"
               href="https://discord.com/invite/emeraldcity"
               target="_blank"
             >
-              EMERALD CITY
+              Emerald City DAO
             </a>
           </li>
         </main>
@@ -113,7 +115,6 @@ const NavWrapper = styled.div`
   }
   .dropdown-body{
     position: absolute;
-    padding: 5px;
     border-top: 1px solid #00F5D0;
     display: none;
     background-color: #171717;
@@ -132,11 +133,13 @@ a {
 }
 
 .dropdown-item {
-  padding: 10px 3px;
+  padding: 10px 20px;
 }
 
 .dropdown-item:hover {
   cursor: pointer;
+  background-color: rgba(240, 248, 255, 0.9);
+  color: black;
 }
 
 .dropdown-item-dot {
@@ -151,9 +154,19 @@ a {
 
 .nav-link{
   font-family: 'JetBrains Mono', monospace;
-font-size: 18px;
-color: #11F6D4;
-margin-left: 2rem;
+  font-size: 18px;
+  margin-left: 3rem;
+  background-color: #38e8c6;
+  color: black;
+  padding: 1rem;
+  border-radius: .25rem;
+
+  :hover{
+    color: black;
+    background-color: rgba(240, 248, 255, 0.9);
+    cursor: pointer;
+    transition: ease-in-out .3s;
+  }
 }
 
 @media (max-width: 1000px) {
