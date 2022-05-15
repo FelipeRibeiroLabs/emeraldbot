@@ -10,16 +10,14 @@ export default function MainFeatures({handleNav}) {
 
       <div className="displayDiv2">
         <div>
+
           <div className="card-title">
             <h3>Display NFTs in Discord</h3>
             <div className="icon">
               <FaDiscord size={26} color={"#11F6D4"} />
             </div>
           </div>
-          {/* <p>Like Floats for now but more to come</p> */}
-          {/* <span> (NBATS, Flunks, GENIACE, and more soon)</span> */}
-          {/* <img src="float.png" alt="" className="float" /> */}
-          {/* <img src="flunks.webp" alt="" className="flunks"/> */}
+
           <div className="subDiv">
             <div>
               <p>Here we will the description of the features</p>
@@ -36,6 +34,7 @@ export default function MainFeatures({handleNav}) {
             <FaDoorOpen size={26} color={"#11F6D4"} />
           </div>
         </div>
+        
         <div className="subDiv">
           <div>
             <p>Role based Channels</p>

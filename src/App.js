@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 import Home2d from "./pages/Home2d";
 import DisplayCommands from "./pages/DisplayCommands";
 import GeneralCommands from "./pages/GeneralCommands";
@@ -31,7 +30,6 @@ export default function App() {
           <BackgroundComponent />
           <Overlay />
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/" element={<Home2d url={url} />} />
             <Route path="/display" element={<DisplayCommands />} />
             <Route path="/access" element={<AccessCommands />} />

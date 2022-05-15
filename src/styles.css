@@ -413,26 +413,6 @@ header {
   top: 0;
 }
 
-.nav-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 18px;
-  color: #11F6D4;
-  margin-left: 2rem;
-}
-
-nav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  width: 100vw;
-  flex-direction: inherit;
-  justify-content: space-between;
-  padding: 0.8rem 8.2rem;
-  list-style-type: none;
-  gap: 20px;
-  background: transparent;
-}
 
 .scrollArea {
   position: absolute;
@@ -488,60 +468,6 @@ cursor:pointer;
 button:hover {
 background: #00F5D0;
 color: black
-}
-
-
-.dropdown {
-  font-size: 18px;
-  font-family: var(--font-accent) ;
-  width: 7rem;
-  background-color: transparent;
-  color: #00F5D0;
-}
-
-.dropdown-header {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dropdown-body {
-  position: absolute;
-  padding: 5px;
-  border-top: 1px solid #00F5D0;
-  display: none;
-  background-color: #171717;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
-}
-
-.dropdown-body.open {
-  display: flex;
-  flex-direction: column;
-}
-
-a {
-  color: #00F5D0;
-  text-decoration: none;
-}
-
-.dropdown-item {
-  padding: 10px 3px;
-}
-
-.dropdown-item:hover {
-  cursor: pointer;
-}
-
-.dropdown-item-dot {
-  opacity: 0;
-  color: #91A5BE;
-  transition: all .2s ease-in-out;
-}
-
-.dropdown-item-dot.selected {
-  opacity: 1;
 }
 
 .icon {

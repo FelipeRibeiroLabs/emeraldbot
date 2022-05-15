@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useCallback } from "react";
+import React from "react";
 import FooterComponent from "../components/FooterComponent2d";
 import { useNavigate } from "react-router-dom";
 
@@ -24,27 +24,7 @@ export default function Home2d({ onChangePages, state, url }) {
 
 const Wrapper = styled.section`
   overflow: inherit !important;
-
-  .divBox {
-    padding: 8rem 7rem;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .textDiv {
-    width: 50%;
-  }
-
-  .imageDiv {
-    width: 50%;
-    & img {
-      width: 550px;
-    }
-  }
-
+  
   .sectionTxt {
     width: 100%;
     padding: 2rem 50px;
@@ -68,17 +48,6 @@ const Wrapper = styled.section`
     justify-content: space-between;
 
     background-color: rgba(0, 0, 0, 0.4);
-
-    & .float {
-      width: 60px;
-      position: absolute;
-    }
-
-    & .flunks {
-      width: 60px;
-      position: relative;
-      right: 20px;
-    }
 
     & h3 {
       margin: 0px;
@@ -119,19 +88,9 @@ const Wrapper = styled.section`
     align-items: center;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.4);
-    */ & .float {
-      width: 60px;
-      position: absolute;
-    }
-
-    & .flunks {
-      width: 60px;
-      position: relative;
-      right: 20px;
-    }
 
     & h3 {
-      marginright: 0px;
+      margin-right: 0px;
       font-size: 2.2rem;
       font-weight: 500;
     }
