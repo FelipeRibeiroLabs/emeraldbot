@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,900;1,900&display=swap');
-@import '@picocss/pico';
+/* @import '@picocss/pico'; */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins:wght@400;700&display=swap');
 
 * {
@@ -27,7 +27,7 @@
 /* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --primary: hsla(var(--palette-green-50), 100%);
+    --primary: hsla(var(--palette-green-40), 100%);
     --primary-hover: hsla(var(--palette-green-60), 100%);
     --primary-focus: transparent;
     --primary-inverse: hsla(var(--palette-green-60), 100%);
@@ -126,22 +126,208 @@
 html,
 body,
 #root {
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* margin: 0;
+  padding: 0; */
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* IS THIS NECESSARY? */
+  /* overflow: hidden; */ 
+
+  /* background: #1D2741; */
+  /* background-image: url('/public/bg.png'); */
+  /* background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png"); */
+  /* background-size: fill;
+  background-repeat: no-repeat;
+  background-position: top;
+   */
+  
+
 }
 
+.background-gradient {
+  background: 
+  radial-gradient(ellipse at right, var(--gradient-primary), transparent),
+  radial-gradient(ellipse at bottom, var(--gradient-secondary), transparent);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#circle-container {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: transparent;
+  border: hsla(105, 17%, 41%, 0.07) solid 1px;
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+}
+.circle-little {
+  border-radius: 50%;
+  background: hsla(105, 17%, 41%, 0.07);
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  aspect-ratio: 1/1;
+  z-index: -2;
+}
+.circle.one {
+  height: 95%;
+}
+.circle.two {
+  height: 85%;
+}
+.circle.three {
+  height: 75%;
+}
+.circle.four {
+  height: 65%;
+}
+.circle.five {
+  height: 55%;
+}
+.circle.six {
+  height: 45%;
+}
+.circle.seven {
+  height: 35%;
+}
+.circle.eight {
+  height: 25%;
+}
+.circle.nine {
+  height: 15%;
+}
+/* Circle rotating effect */
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 8s linear infinite;
+  -moz-animation: rotating 8s linear infinite;
+  -ms-animation: rotating 8s linear infinite;
+  -o-animation: rotating 8s linear infinite;
+  animation: rotating 8s linear infinite;
+}
+.rotating.two, .rotating.seven {
+  -webkit-animation: rotating 14s linear infinite;
+  -moz-animation: rotating 14s linear infinite;
+  -ms-animation: rotating 14s linear infinite;
+  -o-animation: rotating 14s linear infinite;
+  animation: rotating 14s linear infinite;
+}
+.rotating.reverse {
+  animation-direction: reverse;
+}
+@media (min-width: 50em) {
+  .circle.one {
+    width: 95%;
+    height: auto;
+  }
+  .circle.two {
+    width: 85%;
+    height: auto;
+  }
+  .circle.three {
+    width: 75%;
+    height: auto;
+  }
+  .circle.four {
+    width: 65%;
+    height: auto;
+  }
+  .circle.five {
+    width: 55%;
+    height: auto;
+  }
+  .circle.six {
+    width: 45%;
+    height: auto;
+  }
+  .circle.seven {
+    width: 35%;
+    height: auto;
+  }
+  .circle.eight {
+    width: 25%;
+    height: auto;
+  }
+  .circle.nine {
+    width: 15%;
+    height: auto;
+  }
+}
+
+@supports not (aspect-ratio: 1/1) {
+  #circle-container {
+    display: none;
+  }
+}
+
+/* .backdrop-color{
+  position: fixed;
+  z-index: -1;
+width: 1101px;
+height: 200%;
+left: -48px;
+top: 0px;
+
+background: radial-gradient(50% 50% at 50% 50%, rgba(47, 83, 194, 0.4) 0%, rgba(46, 194, 199, 0) 100%);
+filter: blur(200px);
+} */
+
 body {
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   background: #1D2741;
   font-family: 'Poppins', sans-serif;
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iYmxhY2siLz48L3N2Zz4='),
+  cursor: url('https://res.cloudinary.com/do4mactw0/image/upload/v1651689709/cursor_ctwznw.svg'),
     auto;
-  /* background-image: url("https://res.cloudinary.com/do4mactw0/image/upload/v1651555652/Home_ef2hlm.png");
-  background-size: fill;
-  background-repeat: no-repeat;
-  background-position: top; */
+ 
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
@@ -149,27 +335,38 @@ body {
 
 
 canvas {
-  display: block;
 }
 
 body::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
-}
-
-h1 {
-  font-size: 8em;
-  font-weight: 900;
-  letter-spacing: -0.3rem;
-  line-height: 6rem;
-  margin: 0;
-  padding: 0;
-  color: rgba(240, 248, 255, 0.8);
   
 }
 
+h1 {
+  /* font-size: 8em; */
+  font-weight: 900;
+  letter-spacing: -0.3rem;
+  /* line-height: 6rem; */
+  margin: 0;
+  padding: 0;
+  color: rgba(240, 248, 255, 0.8);
+  -webkit-text-stroke:1.4px white;
+  -webkit-text-fill-color:transparent;
+}
+
 h2 {
-  font-size: 5em;
-  font-weight: 300;
+  /* font-family: 'JetBrains Mono', monospace; */
+  font-size: 4em;
+  font-weight: 600;
+  /* line-height:4.2rem; */
+  padding: 0;
+  color: #fff
+}
+
+
+h3 {
+  font-size: 4em;
+  font-weight: 800;
   letter-spacing: -0.05em;
   line-height:4.2rem;
   margin-left: 2rem;
@@ -177,10 +374,22 @@ h2 {
   color: rgba(240, 248, 255, 0.798);
 }
 
-a {
+.icon{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 20px;
+}
+
+/* a {
   pointer-events: all;
   color: black;
   text-decoration: none;
+} */
+
+p {
+  color: rgba(240, 248, 255, 0.9);
+
 }
 
 .cards-container{
@@ -192,24 +401,83 @@ a {
   background-color: black;
 }
 
-/* NAV */
-
-.nav-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 18px;
-  color: var(--primary);
-  margin-left: 1.6rem;
+.card-title {
+  display: flex;
+  align-items: center;
 }
 
-nav {
-  display: flex;
+/* NAV */
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+
+.scrollArea {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  flex-direction: inherit;
-  justify-content: space-between;
-  padding-left: 4.2rem;
-  padding-top: 1.4rem;
-  padding-right: 4.2rem;
-  list-style-type: none;
-  gap: 10px;
-  background: transparent;
+  height: 100vh;
+  overflow: auto;
+}
+
+.loading {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-bar-container {
+  width: 100px;
+  height: 3px;
+  background: #272727;
+}
+
+.loading-bar {
+  height: 3px;
+  background: white;
+}
+
+.loading-data {
+  display: inline-block;
+  position: relative;
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.8em;
+  color: #f0f0f0;
+  font-size: 0.6em;
+}
+
+button {
+background-color: rgba(0, 0, 0, 0.9);
+font-family: var(--font-accent) ;
+color: #00F5D0;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+cursor:pointer;
+
+}
+button:hover {
+background: #00F5D0;
+color: black;
+transition: ease-in-out .3s;
+}
+
+.icon {
+  font-size: 13px;
+  color: #91A5BE;
+  transform: rotate(0deg);
+  transition: all .2s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(90deg);
 }
