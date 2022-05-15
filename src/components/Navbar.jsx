@@ -74,6 +74,7 @@ export default function Navbar({ vpWidth }) {
               className="nav-link"
               href="https://discord.com/invite/emeraldcity"
               target="_blank"
+              rel="noreferrer"
             >
               Emerald City DAO
             </a>
@@ -106,6 +107,7 @@ const NavWrapper = styled.div`
     width: 7rem;
     background-color: transparent;
     color: #00F5D0;
+    z-index: 5;
   }
   .dropdown-header{
     cursor: pointer;
