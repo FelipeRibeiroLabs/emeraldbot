@@ -10,7 +10,7 @@ import infos from "../data/CommandsInfos.json"
   
   export default function GeneralCommands({ onChangePages, state }) {
 
-    const commands = infos[0].emeraldBotCommands
+    const commands = infos[2].utils
 
     return (
           <Wrapper>

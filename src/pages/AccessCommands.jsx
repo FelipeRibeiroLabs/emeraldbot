@@ -10,7 +10,7 @@ import infos from "../data/CommandsInfos.json"
   
   export default function AccessCommands({ onChangePages, state }) {
 
-    const commands = infos[2].gatedAccess
+    const commands = infos[1].gatedAccess
 
     return (
           <Wrapper>

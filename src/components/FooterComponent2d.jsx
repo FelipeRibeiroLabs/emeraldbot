@@ -15,17 +15,17 @@ export default function FooterComponent({ vpWidth }) {
         </p>
       </div>
       <div>
-        <button>JOIN DAO</button>
+        <button>START BUILDING</button>
       </div>
       <div className="footer-bar">
         <div className="footer-item">
           {" "}
-          <span>2022. all right reserved</span>
+          <span>2022. all rights reserved</span>
         </div>
         <div className="footer-item"></div>
         <div>
           <span>
-            Created by <a>Emerald City DAO</a>
+            Created by <a style={{color:"var(--primary)"}}>Emerald City DAO</a>
           </span>
         </div>
       </div>

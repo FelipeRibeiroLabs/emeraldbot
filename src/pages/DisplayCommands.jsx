@@ -10,7 +10,7 @@ import FooterComponent from "../components/FooterComponent2d";
   
   export default function DisplayCommands({ onChangePages, state }) {
 
-    const commands = infos[1].floatCommands
+    const commands = infos[0].display
 
     return (
           <Wrapper>
