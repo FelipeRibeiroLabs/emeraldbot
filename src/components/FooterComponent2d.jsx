@@ -15,7 +15,7 @@ export default function FooterComponent({ vpWidth }) {
         </p>
       </div>
       <div>
-        <button>START BUILDING</button>
+        <button>Add Server</button>
       </div>
       <div className="footer-bar">
         <div className="footer-item">
