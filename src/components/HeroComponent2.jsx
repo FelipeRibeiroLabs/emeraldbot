@@ -16,7 +16,7 @@ export default function HeroComponent2({url}) {
               that allows you to distribute roles, gate access to channels based
               on token holdings and more.
             </p>
-            <button>Add to server</button>
+            <button>Start building</button>
           </div>
         </div>  
       </HeroWrapper>

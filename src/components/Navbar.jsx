@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-import styled from 'styled-components'
+import styled from "styled-components";
+import Logo from "./Logo";
 
 const data = [
   { id: 0, label: "Display", url: "/display" },
@@ -19,7 +20,7 @@ export default function Navbar({ vpWidth }) {
 
   const handleItemClick = (id) => {
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
-    setOpen(false)
+    setOpen(false);
   };
 
   return (
@@ -27,15 +28,26 @@ export default function Navbar({ vpWidth }) {
       <nav>
         <div>
           <Link to={"/"}>
-              <img
+            <Logo />
+            {/* <img
                 alt="logo"
                 style={{ height: "20%" }}
                 src="https://res.cloudinary.com/do4mactw0/image/upload/v1652506930/emerald-bot-logo_szzd8y.png"
-              />
+              /> */}
           </Link>
         </div>
 
-        <main style={{ display: "flex" }}>
+        <main style={{ display: "flex", width:"40%", justifyContent:"space-between" }}>
+          <li>
+            <a
+              className="nav-link"
+              href="https://discord.com/invite/emeraldcity"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Docs
+            </a>
+          </li>
           <li>
             <div className="dropdown">
               <div className="dropdown-header" onClick={toggleDropdown}>
@@ -86,8 +98,7 @@ export default function Navbar({ vpWidth }) {
 }
 
 const NavWrapper = styled.div`
-
-  nav{
+  nav {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -101,23 +112,23 @@ const NavWrapper = styled.div`
     background: transparent;
   }
 
-  .dropdown{
+  .dropdown {
     font-size: 18px;
-    font-family: var(--font-accent) ;
+    font-family: var(--font-accent);
     width: 7rem;
     background-color: transparent;
-    color: #00F5D0;
+    color: #00f5d0;
     z-index: 5;
   }
-  .dropdown-header{
+  .dropdown-header {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .dropdown-body{
+  .dropdown-body {
     position: absolute;
-    border-top: 1px solid #00F5D0;
+    border-top: 1px solid #00f5d0;
     display: none;
     background-color: #171717;
     border-bottom-left-radius: 9px;
@@ -125,55 +136,55 @@ const NavWrapper = styled.div`
   }
 
   .dropdown-body.open {
-  display: flex;
-  flex-direction: column;
-}
+    display: flex;
+    flex-direction: column;
+  }
 
-a {
-  color: #00F5D0;
-  text-decoration: none;
-}
+  a {
+    color: #00f5d0;
+    text-decoration: none;
+  }
 
-.dropdown-item {
-  padding: 10px 20px;
-}
+  .dropdown-item {
+    padding: 10px 20px;
+  }
 
-.dropdown-item:hover {
-  cursor: pointer;
-  background-color: rgba(240, 248, 255, 0.9);
-  color: black;
-}
-
-.dropdown-item-dot {
-  opacity: 0;
-  color: #91A5BE;
-  transition: all .2s ease-in-out;
-}
-
-.dropdown-item-dot.selected {
-  opacity: 1;
-}
-
-.nav-link{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 18px;
-  margin-left: 3rem;
-  background-color: #38e8c6;
-  color: black;
-  padding: 1rem;
-  border-radius: .25rem;
-
-  :hover{
-    color: black;
-    background-color: rgba(240, 248, 255, 0.9);
+  .dropdown-item:hover {
     cursor: pointer;
-    transition: ease-in-out .3s;
+    background-color: rgba(240, 248, 255, 0.9);
+    color: black;
   }
-}
 
-@media (max-width: 1000px) {
-  nav{
-    padding: 0.8rem 4.2rem;
+  .dropdown-item-dot {
+    opacity: 0;
+    color: #91a5be;
+    transition: all 0.2s ease-in-out;
   }
-}
-`
+
+  .dropdown-item-dot.selected {
+    opacity: 1;
+  }
+
+  .nav-link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    // margin-left: 3rem;
+    // background-color: #38e8c6;
+    color: #38e8c6;
+    padding: 1rem;
+    border-radius: 0.25rem;
+
+    :hover {
+      color: #38e8c6;
+      background-color: rgba(0, 204, 174, 0.1);
+      cursor: pointer;
+      transition: ease-in-out 0.3s;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    nav {
+      padding: 0.8rem 4.2rem;
+    }
+  }
+`;

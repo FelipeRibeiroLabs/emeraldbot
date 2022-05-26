@@ -12,7 +12,7 @@ import BackgroundComponent from "./components/BackgroundComponent";
 import LoadingIndicator from "./components/LoadingIndicator";
 
 const url =
-  "https://res.cloudinary.com/do4mactw0/image/upload/v1652537880/emerald-bot_c8qn1d.png";
+  "https://res.cloudinary.com/do4mactw0/image/upload/v1652668355/emerald-bot-logo_e06ate.png";
 
 export default function App() {
   const { hasLoaded, hasError } = useImage(url);
