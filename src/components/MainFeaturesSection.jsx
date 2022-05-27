@@ -13,10 +13,7 @@ export default function MainFeaturesSection({
   link,
 }) {
   return (
-    <Wrapper>
-      <section>
-        {left ? (
-          <>
+        <Wrapper>
             <div className="imgDiv">
               <img src={iconLink} alt="" />
             </div>
@@ -36,40 +33,15 @@ export default function MainFeaturesSection({
                 See commands
               </button>
             </div>
-          </>
-        ) : (
-          <>
-            <div className="infoDiv">
-              <div className="titleDiv">
-                <h3>
-                  {title} <span>{spanTitle}</span>
-                </h3>
-              </div>
-
-              <div className="textDiv">
-                <p>{text}</p>
-              </div>
-
-              <button onClick={()  => handleNav(link.toLowerCase())} >
-                {/* <Link to={link.toLowerCase()}>See commands</Link> */}
-                See commands
-              </button>
-            </div>
-            <div className="imgDiv">
-              <img src={iconLink} alt="" />
-            </div>
-          </>
-        )}
-      </section>
-    </Wrapper>
+          </Wrapper>
   );
 }
 
-const Wrapper = styled.main`
+const Wrapper = styled.section`
   width: 100%;
-  padding: 80px 0;
-  margin: 180px auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  padding: 120px 0;
+  margin: 0px auto;
+  /* background-color: rgba(0, 0, 0, 0.4); */
 
   section {
     width: 70%;
@@ -160,6 +132,7 @@ const Wrapper = styled.main`
   @media (max-width: 800px) {
     section {
       width: 90%;
+      flex-direction: column;
     }
 
     img {

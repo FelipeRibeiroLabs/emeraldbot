@@ -45,6 +45,29 @@ export default function MainFeatures({ handleNav }) {
 }
 
 const Wrapper = styled.div`
-  &:nth-child(1) {
+background-color: rgba(0, 0, 0, 0.4);
+
+section {
+    width: 70%;
+    padding: 120px 0;
+    margin: auto;
+    display: flex;
   }
+
+  section:nth-child(2n){
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 800px) {
+    section {
+      width: 90%;
+      padding: 70px 0;
+      flex-direction: column;
+    }
+
+    section:nth-child(2n){
+    flex-direction: column;
+  }
+  }
+
 `;
