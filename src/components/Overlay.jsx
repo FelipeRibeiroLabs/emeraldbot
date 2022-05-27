@@ -62,6 +62,15 @@ export default function Overlay() {
                 />
               </Link>
 
+          
+                <a 
+                href=""
+                target="_blank"
+                className='docsBtn'
+                >
+                Docs
+                </a>
+
                 <Link 
                 to="/display"
                 >
@@ -127,5 +136,10 @@ const LinkWrapper = styled.div`
     background-color: #38e8c6;
     color: black;
     font-weight: 400;
+  }
+
+  .docsBtn{
+    margin: 20px auto;
+    border: 1px solid #38e8c6;
   }
 `
